@@ -1,0 +1,527 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumerate}
+% Margins
+\usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
+% Colour table cells
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+% Get larger line spacing in table
+\newcommand{\tablespace}{\\[1.25mm]}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\tstrut{\rule{0pt}{2.0ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+\title{Mat102 Chapter 4}
+\author{Joseph Siu}
+\date{\today}
+
+
+
+
+
+\begin{document}
+\maketitle
+
+\section*{Template for induction}
+
+@, the base case $n=1$ is true,
+
+now assume @ for some $k\in \mathbb{N}$, show that @
+
+\begin{center}
+    @
+\end{center}
+
+we proved $k+1$ from $k$, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+
+
+
+
+\section*{4.6 Exercises for Chapter 4}
+
+\subsection*{4.6.1}
+
+(a) consider the base case n=1,
+
+$(2\times1-1)^2=\frac{4(1)^3-1}{3}$, $1=1$, true for the base case.
+
+Now we assume the equation holds true for some values of $k\in \mathbb{N}$, $1^2+3^2+5^2+\dots+(2k-1)^2=\frac{4k^3-k}{3}$, and show that $1^2+3^2+5^2+\dots+(2k-1)^2+(2(k+1)-1)^2=\frac{4(k+1)^3-(k+1)}{3}$ is also true.
+
+\begin{center}
+$\begin{aligned}\frac{4\left(k+1\right)^3-\left(k+1\right)}3&=\frac{4\left(k^3+3k^2+3k+1\right)-k-1}3\\\\&=\frac{4k^3-k}3+\frac{12k^2+12k+4-1}3\\\\&=\frac{4k^3-k}3+4k^2+4k+1\\\\&=1^2+3^2+5^2+\cdots+\left(2k-1\right)^2+\left(2\left(k+1\right)-1\right)^2\end{aligned}$
+\end{center}
+
+We proved k+1 from k, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+(b) consider the base case n=1,
+
+$1^2=\frac{1}{6}(1)(1+1)(1+2(1))$, which is true.
+
+Now, we assume the equation holds true for some values of $k \in \mathbb{N}$, $1^2+2^2+3^2+\cdots+k^2=\frac16k(1+k)(1+2k)$, and show that $1^2+2^2+3^2+\cdots+k^2+(k+1)^2=\frac16(k+1)(1+(k+1))(1+2(k+1))$
+
+\begin{center}
+    $\begin{aligned}
+\frac{1}{6}(k+1)(k+2)(2k+3)& =\frac{1}{6}(k+1)(2k+3)k+\frac{2}{6}(k+1)(2k+3)  \\
+&=\frac{1}{6}k(k+1)(1+2k)+\frac{2}{6}k(k+1)+\frac{2}{6}(k+1)(2k+3) \\
+&=\frac{1}{6}k(k+1)(1+2k)+\frac{1}{3}(k^{2}+k+2k^{2}+5k+3) \\
+&=\frac{1}{6}k(k+1)(1+2k)+\frac{1}{3}(3k^{2}+6k+3) \\
+&=\frac{1}{6}k(k+1)(1+2k)+k^{2}+2k+1 \\
+&=\frac{1}{6}k(k+1)(1+2k)+(k+1)^{2} \\
+&=1^{2}+2^{2}+3^{2}+\cdots+k^{2}+(k+1)^{2}
+\end{aligned}$
+\end{center}
+
+we proved $k+1$ from $k$, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+\subsection*{4.6.2}
+
+(a) $5^1+5<5^2$, the base case $n=1$ is true,
+
+now assume $5^k+5<5^{k+1}$ for some $k\in \mathbb{N}$, show that $5^{k+1}+5<5^{(k+1)+1}$.
+
+\begin{center}
+    $5^{(k+1)+1}=5\cdot5^{k+1}$\\
+$\begin{aligned}5\cdot5^{k+1}&>5\cdot(5^{k}+5)\\&>5^{k+1}+5+20\\&>5^{k+1}+5\end{aligned}$
+\end{center}
+
+we proved k+1 from k, by PMI, the inequality is valid for any $k \in \mathbb{N}$ \qed
+
+(b) $1\leq1^2$, the base case $n=1$ is true,
+
+now assume $1+2+3+\cdots+k\leq k^2$ for some $k\in \mathbb{N}$, show that $1+2+3+\cdots+k+(k+1)\leq (k+1)^2$
+
+\begin{center}
+    $\begin{aligned}\left(k+1\right)^2&=k^2+2k+1\\&=k^2+k+1+k\\&=1+2+3+\cdots+k+k+1+k\\&\because k>0\\\therefore(k+1)^2&>1+2+3+\cdots+k+(k+1)\end{aligned}$
+\end{center}
+
+we shows k+1 from k, by PMI, this inequality is valid for any $k\in \mathbb{N}$
+
+(c) $\frac{1}{\sqrt{1}}\geq \sqrt{1}$ the base case $n=1$ is true,
+
+now assume $\frac1{\sqrt{1}}+\frac1{\sqrt{2}}+\frac1{\sqrt{3}}+\cdots+\frac1{\sqrt{k}}\geq\sqrt{k}$ for some $k\in \mathbb{N}$, show that $\frac1{\sqrt{1}}+\frac1{\sqrt{2}}+\frac1{\sqrt{3}}+\cdots+\frac1{\sqrt{k}}+\frac{1}{\sqrt{k+1}}\geq\sqrt{k+1}$
+
+\begin{center}
+    $\begin{aligned}\frac1{\sqrt{\pi}}+\frac1{\sqrt{2}}+\frac1{\sqrt{3}}+\cdots+\frac1{\sqrt{k}}&\geq\sqrt{k}\\\frac1{\sqrt{1}}+\frac1{\sqrt{2}}+\frac1{\sqrt{3}}+\cdots+\frac1{\sqrt{k}}+\frac1{\sqrt{k+1}}&\geq\sqrt{k}+\frac1{\sqrt{k+1}}&\geq\sqrt{k+1}\end{aligned}$\\
+    $\begin{aligned}\frac{\sqrt{k+1}\cdot\sqrt{k}+1}{\sqrt{k+1}}&\geq\sqrt{k+1}\\\because\sqrt{k+1}&>0\\\therefore\sqrt{k(k+1)}+1\geq k+1\\k^{2}+k\geq k^{2}\\k\geq0\end{aligned}$
+\end{center}
+
+(this is the rough work, revere all processes to get the actual proof)
+
+we proved $k+1$ from $k$, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+(d) $\frac{1}{\sqrt{1}}\leq 2\sqrt{1}$, the base case $n=1$ is true,
+
+now assume $\begin{aligned}&\frac{1}{\sqrt{1}}+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\cdots+\frac{1}{\sqrt{k}}\leq2\sqrt{k}\end{aligned}$ for some $k\in \mathbb{N}$, show that 
+
+$\begin{aligned}&\frac{1}{\sqrt{1}}+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\cdots+\frac{1}{\sqrt{k}}+\frac{1}{\sqrt{k+1}}\leq2\sqrt{k+1}\end{aligned}$
+
+rough work:
+
+\begin{center}
+    $\begin{aligned}\frac1{\sqrt{1}}+\frac1{\sqrt{2}}+\frac1{\sqrt{3}}+\cdots+\frac1{\sqrt{k}}&\leq2\sqrt{k}\\\frac1{\sqrt{1}}+\frac1{\sqrt{2}}+\frac1{\sqrt{3}}+\cdots+\frac1{\sqrt{k}}+\frac1{\sqrt{k+1}}&\leq2\sqrt{k}+\frac{1}{\sqrt{k+1}}\\2\sqrt{k}+\frac1{\sqrt{k+1}}&\leq2\sqrt{k+1}\\\frac{2\sqrt{k(k+1)}+1}{\sqrt{k+1}}&\leq2\sqrt{k+1}\\2\sqrt{k^2+k}+1&\leq2k+2\\4k^2+4k&\leq4k^2+4k+1\\0&\leq1\end{aligned}$
+\end{center}
+
+proof:
+\begin{center}
+    $\begin{aligned}
+&0\leq1 \\
+& 4k^{2}+4k+0\leq4k^{2}+4k+1  \\
+&4(k^{2}+k)\leq(2k+1)^{2} \\
+&2\sqrt{k^{2}+k}\leq|2k+1| \\
+&\because2k+1>0 \\
+&\therefore2\sqrt{k^{2}+k}\leq2k+1 \\
+&2\sqrt{k^{2}+k}+1\leq2(k+1) \\
+&\because\sqrt{k+1}>0 \\
+&\therefore\frac{2\sqrt{k(k+1)}+1}{\sqrt{k+1}}\leq2\sqrt{k+1} \\
+&2\sqrt{k}+\frac{1}{\sqrt{k+1}}\leq2\sqrt{k+1} \\
+&\frac{1}{\sqrt{1}}+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\cdots+\frac{1}{\sqrt{k}}+\frac{1}{\sqrt{k+1}}\leq2\sqrt{k+1}
+\end{aligned}$
+\end{center}
+
+we proved $k+1$ from $k$, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+\subsection*{4.6.3}
+
+\begin{center}
+    $\begin{aligned}a^{2}&>0\\-a^{2}&<0\\1-a^{2}&<1\\(1-a)(1+a)&<1\\(1-a)&<\frac{1}{1+a}\end{aligned}$
+\end{center}
+
+for n=1, the inequality is true, which means the base case is true.
+
+now assume $(1-a)^k<\frac1{1+k\cdot a}$ for some $k\in \mathbb{N}$, show that $(1-a)^{k+1}<\frac1{1+(k+1)\cdot a}$
+
+\begin{center}
+    $\begin{aligned}\left(1-a\right)^{k+1}&=\left(1-a\right)^{k}\cdot\left(1-a\right)\\&<\frac1{1+ka}\cdot\left(1-a\right)\\&<\frac{1-a}{1+ka}\end{aligned}$\\
+    $\begin{aligned}a^{2}(k+1)&>0\\-ka^{2}-a^{2}&<0\\1+ka+a-a-ka^{2}-a^{2}&<1+ka\\(1-a)(1+ka+a)&<1+ka\\\frac{1-a}{1+ka}&<\frac{1}{1+(k+1)a}\end{aligned}$\\
+    $\therefore(1-a)^{k+1}<\frac{1-a}{1+ka}<\frac{1}{1+(k+1)a}$
+\end{center}
+
+we proved $k+1$ from $k$, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+\subsection*{4.6.4}
+
+$3^{4(1)+2}+1=730$, the base case n=1 is divisible by 10.
+
+Now assume $3^{4k+2}+1$ is divisible by 10 for some $k \in \mathbb{N}$, show that $3^{4(k+1)+2}+1$ is also divisible by 10.
+
+\begin{center}
+    $\begin{aligned}3^{4(k+1)+2}+1&=&3^{4k+6}+1\\&=&3^4\cdot3^{4k+2}+1\\&=&81\cdot3^{4k+2}+1\\&=&80\cdot3^{4k+2}+&3^{4k+2}+1\\&=&10\left(8\cdot3^{4k+2}\right)+&\left(3^{4k+2}+1\right)\end{aligned}$
+\end{center}
+
+this shows that $3^{4(k+1)+2}+1$ is indeed divisible by 10, by PMI, this statement is true.\qed
+
+\subsection*{4.6.5}
+
+$(1)^3+2(1)=3$, the base case n=1 is divisible by 3.
+
+Now assume $k^3+2k$ is divisible by 3 for some $k \in \mathbb{N}$, show that $(k+1)^3+2(k+1)$ is also divisible by 3.
+
+\begin{center}
+    $\begin{aligned}&(k+1)^3+2(k+1)\\=&k^3+3k^2+3k+1+2k+2\\=&(k^3+2k)+3\left(k^2+1k+1\right)\end{aligned}$
+\end{center}
+
+this shows that $(k+1)^3+2(k+1)$ is indeed divisible by 3, by PMI, this statement is true.\qed
+
+\subsection*{4.6.6}
+
+$4^{2(1)}-1=15$, the base case n=1 is divisible by 5.
+
+Now assume $4^{2k}-1$ is divisible by 5 for some $k \in \mathbb{N}$, show that $4^{2(k+1)}-1$ is also divisible by 5.
+
+\begin{center}
+    $\begin{aligned}&4^{2(k+1)}-1\\=&4^{2k+2}-1\\=&16\cdot4^{2k}-1\\=&15\cdot4^{2k}+(4^{2k}-1)\end{aligned}$
+\end{center}
+
+this shows that $4^{2(k+1)}-1$ is indeed divisible by 5, by PMI, this statement is true.\qed
+
+\subsection*{4.6.7}
+
+$a^1-1$ is divisible by $a-1$, the base case $n=1$ is true,
+
+now assume $a^k-1$ is divisible by $a-1$ for some $k\in \mathbb{N}$, show that $a^{k+1}-1$ is also divisible by $a-1$
+
+\begin{center}
+    $\begin{aligned}&a^{k+1}-1\\&=a\cdot a^{k}-1\\&=\left(a-1\right)a^{k}+\left(a^{k}-1\right)\end{aligned}$
+\end{center}
+
+we proved the divisibility of $k+1$ from $k$, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+\subsection*{4.6.8}
+
+$\frac{1}{3}+\frac{1}{2}+\frac{1}{6}=1\in \mathbb{Z}$, the base case $n=1$ is true,
+
+now assume $\frac{1}{3}k^3+\frac{1}{2}k^2+\frac{1}{6}k$ is an integer for some $k\in \mathbb{N}$, show that $\frac{1}{3}(k+1)^3+\frac{1}{2}(k+1)^2+\frac{1}{6}(k+1)$ is also an integer
+
+\begin{center}
+    $\begin{aligned}&\frac13\left(k+1\right)^3+\frac12\left(k+1\right)^2+\frac16\left(k+1\right)\\\\=&\frac13k^3+k^2+k+\frac13+\frac12k^2+k+\frac12+\frac16k+\frac16\\\\=&\left(\frac13k^3+\frac12k^2+\frac16k\right)+k^2+2k+\frac13+\frac12+\frac16\\\\=&\left(\frac13k^3+\frac12k^2+\frac16k\right)+k^2+2k+1\end{aligned}$
+\end{center}
+
+we proved $k+1$ from $k$, by PMI, the equation is valid for any $k\in \mathbb{N}$. \qed
+
+\subsection*{4.6.9}
+
+(a)
+
+\begin{align*}
+    \sum_{k=1}^{100}\left[k\cdot(-1)^k\right] &= - 1 + 2 - 3 + 4 - 5 + ... + 100\\
+    &= (- 1 + 2) + (- 3 + 4) + (- 5 + 6) + ... + (- 99 + 100)\\
+    &= 50 \cdot (1) = 50
+\end{align*}
+
+(b)
+
+\begin{align*}
+    \begin{aligned}\sum_{k=2}^{200}\left(\frac{1}{k}-\frac{1}{k+1}\right)\end{aligned} &= \frac{1}{2} - \frac{1}{3} + \frac{1}{3} - \frac{1}{4} + \cdots + \frac{1}{199} - \frac{1}{200} + \frac{1}{200} - \frac{1}{201}\\
+    &= \frac{1}{2} - \frac{1}{201} = \frac{199}{402}
+\end{align*}
+
+(c)
+
+\begin{align*}
+    \prod_{k=1}^{69}2^{k-35} &= 2^{-34} \cdot 2^{-33} \cdot ... \cdot 2^{33} \cdot 2^{34}\\
+    &=2^{(-34)+(-33)+\cdots+(33)+(34)} = 2^0 = 1
+\end{align*}
+
+(d)
+
+\begin{align*}
+    \prod_{i=10}^{99}\frac i{i+1} &= \frac{10}{11}\cdot\frac{11}{12}\cdot...\cdot\frac{98}{99}\cdot\frac{99}{100}=\frac{10}{100}=\frac{1}{10}
+\end{align*}
+
+\subsection*{4.6.10}
+
+(a) False, $$\left(\sum_{k=1}^2 k\right)\cdot\left(\sum_{k=1}^2 k\right)=9\neq\sum_{k=1}^2(k\cdot k)=5,$$ this counterexample shows that this is a false equation.
+
+(b) True, $$\sum_{k=1}^na_k-\sum_{k=1}^nb_k = \sum_{k=1}^na_k+(-\sum_{k=1}^nb_k) =\sum_{k=1}^n(a_k+(-b_k))=\sum_{k=1}^n(a_k-b_k)$$
+
+(c) False, $(1*2*3)-(0*1*2)=6\neq(1-0)*(2-1)*(3-2)=1$
+
+(d) True. $$\left(\prod_{k=1}^na_k\right)/\left(\prod_{k=1}^nb_k\right)= \frac{a_1\times a_2 \times \cdots\times a_n}{b_1\times b_2 \times \cdots \times b_n}=(\frac{a_1}{b_1})\times(\frac{a_2}{b_2})\times\cdots\times(\frac{a_n}{b_n}) = \prod_{k=1}^n\frac{a_k}{b_k}$$
+
+\subsection*{4.6.11}
+
+
+(a) can be done using induction, but I also want to show this way.
+
+(a) \begin{center}
+$$\begin{aligned}\sum_{i=1}^n\frac i{2^i}&=\frac1{2^i}+\frac2{2^2}+\frac3{2^3}+\cdots+\frac n{2^n}\\\\\frac12\sum_{i=1}^n\frac i{2^i}&=\frac1{2^2}+\frac2{2^3}+\frac3{2^4}+\cdots+\frac n{2^{n+1}}\\\\\frac12\sum_{i=1}^n\frac i{2^i}&=\frac1{2^1}+\frac1{2^2}+\frac1{2^3}+\cdots+\frac1{2^n}+\frac n{2^{n+1}}\end{aligned}$$
+$$\begin{aligned}\frac12\sum_{i=1}^n\frac i{2^i}&=\frac1{2^1}+\frac1{2^2}+\frac1{2^3}+\cdots+\frac1{2^n}+\frac n{2^{n+1}}\\\frac12+\frac12\cdot(\frac12)^1+\frac12\cdot(\frac12)^2+\cdots+\frac12\cdot(\frac12)^{n-1}&=\frac12\left(\frac{1-(\frac12)^n}{1-\frac12}\right)\\&=1-(\frac12)^n\\&=1-\frac1{2^n}\end{aligned}$$
+    $$\begin{aligned}\frac12\sum_{i=1}^n\frac i{2^i}&=1-\frac1{2^n}-\frac n{2^{n+1}}\\\sum_{i=1}^n\frac i{2^i}&=2-\frac2{2^n}-\frac n{2^n}\\\\&=2-\frac{n+2}{2^n}\end{aligned}$$
+\end{center}
+
+(b) for the base case n=1, $3(1)-2=1=\frac{(1)(3(1)-1)}{2}$, the equation is valid. Assume $\begin{aligned}\sum_{i=1}^k(3i-2)&=\frac{k(3k-1)}2\end{aligned}$ for some $k \in \mathbb{N}$, we want to show that $\begin{aligned}\sum_{i=1}^{k+1}(3i-2)&=\frac{(k+1)(3(k+1)-1)}2\end{aligned}$
+
+$$\begin{aligned}&\frac{\left(k+1\right)\left(3\left(k+1\right)-1\right)}{2}\\\\&=\frac{\left(k+1\right)\left(3k+2\right)}{2}\\\\&=\frac{k\left(3k+2\right)+\left(3k+2\right)}{2}\\\\&=\frac{k\left(3k-1\right)+3k+3k+2}{2}\\\\&=\frac{k\left(3k-1\right)}{2}+3k+1\end{aligned}$$
+
+$$\begin{aligned}&=\sum_{i=1}^{k}\left(3i-2\right)+3k+1\\\\&=\sum_{i=1}^{k}\left(3i-2\right)+\left(3\left(k+1\right)-2\right)\\\\&=\sum_{i=1}^{k+1}\left(3i-2\right)\end{aligned}$$
+
+this shows that this equation is true for all $k \in mathbb{N}$ by PMI. \qed
+
+(c) let n=2 be the base case, $$\prod_{i=2}^2\left(1-\frac1{i^2}\right)=\frac{2+1}{2(2)}$$, which is a valid equation.
+
+now assume $$\prod_{i=2}^k\left(1-\frac1{i^2}\right)=\frac{k+1}{2k}$$ for some $k\in\mathbb{N}$, we need to show that $$\prod_{i=2}^{k+1}\left(1-\frac1{i^2}\right)=\frac{(k+1)+1}{2(k+1)}=\frac{k+2}{2(k+1)}$$
+
+\begin{center}
+    $$\begin{aligned}\prod_{i=2}^{k+1}\left(1-\frac1{i^2}\right)&=\prod_{i=2}^{k}\left(1-\frac1{i^2}\right)\cdot\left(1-\frac1{(k+1)^2}\right)\\\\&=\frac{k+1}{2k}\cdot\left(1-\frac1{(k+1)^2}\right)\\\\&=\frac{k+1}{2k}-\frac1{2k(k+1)}\\\\&=\frac{(k+1)^2-1}{2k(k+1)}\\\\&=\frac{k^2+2k}{2k(k+1)}\\\\&=\frac{k+2}{2(k+1)}\end{aligned}$$
+\end{center}
+
+LHS = RHS, identity is proven for all $k\in\mathbb{N}: k \geq 2$.\qed
+
+\subsection*{4.6.12}
+
+(what is the question asking)
+
+Suppose that P(1), P(2), \ldots is a sequence of statements, and let l be a natural number.
+
+(a) If $P(l)$ is true, and $P(3k)\implies P(3(k+1))$ for any $k\geq l$, then $P(n)$ is true for all $n\geq l$.
+
+(b) If $P(l)$ is true, and $P(3k-1)\implies P(3(k+1)-1)$ for any $k\geq l$, then $P(n)$ is true for all $n\geq l$.
+
+(c) If $P(l)$ is true, and $P(2k+9)\implies P(2(k+1)+9)$ for any $k\geq l$, then $P(n)$ is true for all $n\geq l$.
+
+\subsection*{4.6.13}
+
+(idk) when all $x_i$ are equal, it becomes the Bernoulli's Inequality.
+
+\subsection*{4.6.14}
+
+First let n=2 be the base case, $10^2-1=99$ which $11 | 99$, the base case is true. 
+
+Now assume $11|(10^k-1)$ for some even natural numbers k, and we want to show $11|(10^{k+2}-1)$ is also true so that k implies k+2.
+
+\begin{center}
+    $$\begin{aligned}&10^{k+2}-1\\=&100\cdot10^k-1\\=&99\cdot10^k+(10^k-1)\end{aligned}$$
+    $$\begin{aligned}&\because11\left|\left(10^{k}-1\right)\right.\\&\therefore\quad10^{k}-1\quad=\quad11a\quad,\quad a\in\mathbb{N}\\&\therefore\quad10^{k+2}-1\quad=\quad11\left(9\cdot10^{k}+a\right)\end{aligned}$$
+\end{center}
+
+As shown, k does imply k+2, and the base case k=2 is true. By PMI, the statement is true for all even natural numbers. \qed
+
+\subsection*{4.6.15}
+
+(a)
+
+Consider the base case n=1, $2^2+5\cdot 3=19$ which $11\not| \,\, 19$, is not divisible. Now consider the base case n=2, $2^5+5\cdot 3^2=77$ which obviously $11|77$, is true.
+
+Now assume $2^{3k-1}+5\cdot 3^k$ is divisible by 11 for some values of $k\in\mathbb{N}$, and we want to show that $2^{3(k+2)-1}+5\cdot 3^{k+2}$ is also divisible by 11.
+
+$$\begin{aligned}&2^{3(k+2)-1}+5\cdot3^{k+2}\\\\&=2^6\cdot2^{3k-1}+3^2\cdot5\cdot3^k\\\\&=64\cdot2^{3k-1}+9\cdot5\cdot3^k\\\\&=55\cdot2^{3k-1}+9\left(2^{3k-1}+5\cdot3^k\right)\end{aligned}$$
+
+55 and $2^{3k-1}+5\cdot 3^k$ are both divisible by 11, thus we have shown that $2^{3(k+2)-1}+5\cdot 3^{k+2}$ is also divisible by 11. \qed
+
+(b)
+
+Base case n=2 is true, and k implies k+2 for $2^{3k-1}+5\cdot 3^k$, thus by PMI, it must be true for all even numbers $n\in\mathbb{N}$ that $2^{3n-1}+5\cdot 3^n$ is divisible by 11.
+
+\subsection*{4.6.16}
+
+Given the recursive sequence, $$\begin{cases}a_{1}=1\\a_{n+1}=a_{n}+3n(n+1)\end{cases},$$ and we need to prove that $$a_{n}=n^{3}-n+1, n\in\mathbb{N}.$$
+
+Proof by induction:
+
+Firstly consider the base case $n=1$, $a_1=1^3-1+1=1$ which equals to $a_1$, so the base case holds true.
+
+Now assume that $a_k=k^3-k+1$ for some values $k\in\mathbb{N}$. To show that the explicit formula is valid for n=k+1, we use the recursive definition, and the induction hypothesis:
+
+$$\begin{aligned}a_{k+1}=a_{k}+3k(k+1)&=k^{3}-k+1+3k^{2}\\&=(k+1)^{3}-(k+1)+1\end{aligned}.$$
+
+We proved the case n=k+1, and hence, by induction, our proof is completed. \qed
+
+\subsection*{4.6.17}
+
+Considering the base case n=1, $a_1=2(1)^3-2(1)+3=3$, the explicit formula holds true for n=1.
+
+Now assume $a_k=2k^3-2k+3$ hols true for some $k\in\mathbb{N}$, to show that the explicit formula is valid for $n=k+1$, we use the recursive definition and the induction hypothesis:
+
+$$\begin{aligned}a_{k+1}&=a_{k}+6k(k+1)\\&=2k^3-2k+3+6k^2+6k\\&=2(k+1)^3-2(k+1)+3\end{aligned}.$$
+
+We proved the case $n=k+1$, and hence, by induction, our proof is completed. \qed
+
+\subsection*{4.6.18}
+
+(a) Regular way: $$\begin{aligned}&(x-\frac12)^2\geq-\frac14\\&x^2-x+\frac14+\frac14\geq0\\&2x^2-2x+1\geq0\\&3x^2+3\geq x^2+2x+2\end{aligned}.$$
+
+It is impossible to proof this by induction. Firstly, induction only works for n to be natural numbers. Even if we extend the definition of induction. We can let n be all integers, or rational with a consistent increasement, but still, it is impossible to see the next element of the sequence (set) of n as all real numbers.
+
+
+(b) the base case n=1 is true $2\geq n^2+1$. Now assume $a_k\geq k^2+1$ for some $k\in\mathbb{N}$,  to show that the inequality is valid for $n=k+1$, we use the recursive definition and the induciton hypothesis:
+
+$$a_{k+1}=3\cdot a_k \geq 3n^2+3$$
+
+$$\begin{aligned}3a_{k}&\geq3n^{2}+3\\&\geq\left(n+1\right)^{2}+1+2n^{2}-2n+2\\\\&\geq\left(n+1\right)^{2}+1+2\left(n-\frac{1}{2}\right)^{2}+\frac{3}{2}\\\\&\geq\left(n+1\right)^{2}+1\end{aligned}$$
+
+this shows that the explicit inequality holds true for the entire sequence by PMI.\qed
+
+\subsection*{4.6.19}
+
+(b) $$\begin{aligned}\sum_{i=m}^n\left(a_i+b_i\right)&=\quad a_m+b_m+a_{m+1}+b_{m+1}+\cdots+a_n+m_n\\\\&=\quad a_m+a_{m+1}+\cdots+a_m+b_m+b_{m+1}+\cdots+b_n\\\\&=\left(\sum_{i=m}^na_i\right)+\left(\sum_{i=m}^nb_i\right)\end{aligned}$$
+
+(c) $$\begin{aligned}\prod_{\begin{array}{rcl}i=m\\\end{array}}^{n}(c\cdot a_{i})&=&c\cdot a_{m}\cdot c\cdot a_{n+1}\cdot\cdots\cdot c\cdot a_{n}\\&=&c^{n-m+1}\cdot a_{m-2}\cdot a_{m+1}\cdot\cdots\cdot a_{n}\\&=&c^{n-m+1}\cdot\prod_{i=m}^{n}a_{i}\end{aligned}$$
+
+(d) $$\begin{aligned}\prod_{i=m}^n\left(a_i\cdot b_i\right)&=\quad a_m\cdot b_m\cdot a_{m+1}\cdot b_{m+1}\cdot\cdots\cdot a_n\cdot b_n\\&=\quad a_m\cdot a_{m+1}\cdot\cdots\cdot a_n\cdot b_m\cdot b_{m+1}\cdot\cdots\cdot b_n\\&=\left(\prod_{i=m}^na_i\right)\cdot\left(\prod_{i=m}^nb_i\right)\end{aligned}$$
+
+\subsection*{4.6.20}
+
+1. When n=1, $x_1=2^1+3^0=3$ \checkmark
+
+2. When n=2, $x_2=2^2+3^1=7$ \checkmark
+
+3. when n=3, $x_3=2^3+3^2=17=5(7)-6(3)$ \checkmark
+
+The base cases are proved. Now assume $x_k=2^k+3^{k-1}$ for some naturals k, to prove the explicit formula is true, we use the recursion equation and the formula to show $k \implies k+1$
+
+$$\begin{aligned}x_{k+1}&=5\cdot x_{k}-6\cdot x_{k-1}\\&=5\cdot\left(2^{k}+3^{k-1}\right)-6\cdot\left(2^{k-1}+3^{k-2}\right)\\&=5\cdot2^{k}+5\cdot\frac{3^{k}}{3}-6\cdot\frac{2^{k}}{2}-6\cdot\frac{3^{k}}{9}\\&=2\cdot2^{k}+3\cdot3\\&=2^{k+1}+3^{(k+1)-1}\end{aligned}$$
+
+which indeed, implies. By PMI, we have proven all $n\in\mathbb{N}$ hold true for the inequality.\qed
+
+\subsection*{4.6.21}
+
+1. When n=1, $1^2+4=5$ \checkmark
+
+2. When n=2, $2^2+4=8$ \checkmark
+
+3. when n=3, $3^2+4=13=2(8)-(5)+2$ \checkmark
+
+The base cases are true. Assume $a_k=k^2+4$ for some naturals k. Show that k implies $k+1$ using the recursion definition and the explicit equation:
+
+$$\begin{aligned}a_{k+1}&=2a_k-2a_{k-1}+2\\\\&=2\left(k^2+4\right)-\left(\left(k-1\right)^2+4\right)+2\\\\&=2k^2+8-k^2+2k-1-4+2\\\\&=4k^2+2k+5\\\\&=\left(k+1\right)^2+4\end{aligned}$$
+
+By PMI, this statement holds true for all naturals. \qed
+
+\subsection*{4.6.22}
+
+(Same as the previous question, lazy to show the full solution ...)
+
+$$\begin{aligned}a_k&=4a_{k-1}-4a_{k-2}\\&=4\left(4-k+1\right)\cdot2^{k-1}-4\left(4-k+2\right)\cdot2^{k-2}\\&=2^{k}(10-2k)-2^{k}(6-k)\\&=\left(4-k\right)2^{k}\end{aligned}$$
+
+\subsection*{4.6.23}
+
+1. n=1,2 are both satisfying the inequality. 
+
+2. when n=3, $a_3=\frac{1}{2}\left(a_{2}+\frac{2}{a_{1}}\right)=\frac{3}{2}$, satisfying the inequality.
+
+(not sure how to prove by induction)
+
+$a_{n-1} \in [1,2]$, $a_{n-2} \in [1,2]$, $\frac{2}{a_{n-2}} \in [1,2]$, $a_{n-1}+\frac{2}{a_{n-2}} \in [2,4]$, $\frac{1}{2}(a_{n-1}+\frac{2}{a_{n-2}}) \in [1,2]$
+
+\subsection*{4.6.24}
+
+when $n=1, 2.5 > 0.5$ \checkmark
+
+when $n=2, 3/2 > 1/4$ \checkmark
+
+$$\begin{aligned}a_{n+1}&=\frac1{2^n}\\a_n+2&=\frac1{2^n}+2\\\frac12\left(a_{n+2}\right)&>\frac12\left(\frac1{2^n}+2\right)\\a_{n+1}&>\frac1{2^{n+1}}+1\\a_{n+1}&>\frac1{2^{n+1}}\end{aligned}$$
+
+\subsection*{4.6.25}
+
+\begin{gather*}
+    a_1=2k+1, k\in\mathbb{Z}\\
+    a_2=2n+1, n\in\mathbb{Z}\\
+    a_3=2a_2+3a_1=2(2n+1)+3(2k+1)=4n+2+6k+3=2(2n+3k+2)+1
+\end{gather*}
+
+this shows that when $a_{n-1}$ and $a_{n-2}$ are odd, $a_n$ is also odd. \qed
+
+\subsection*{4.6.26}
+
+For n=1, there are $4^1=4$ triangles, removing 1 there are 3 remaining, which can be tiled by the trapezoid.
+
+when n increases from n to n+1, the number of triangles increases from $4^n$ to $4^{n+1}=4\cdot 4^n$, 4 times the original number. Thus, separating the new board into 4 equal parts, which all parts are same as the original one, has $4^n$ triangles. One of the part's side is removed, the other 3 of the parts' sides are covered by the same trapezoid, 1 triangle each part. Because
+
+\subsection*{4.6.27}
+
+In Case 1, because k is even so $2^0$ doesn't appear as $2^0$ is the only odd term of the sequence $2^0, 2^1, \cdots, 2^k$, and so, we can simply add $2^0$ to the right side to cancel out the 1 in k+1. But in case 2, k already contains $2^0$ and k+1 becomes even, so the addition of $2^0$ won't work for case 2, using this method.
+
+The second case 2, assumes m, a natural smaller than k+1, is also true, while normal induction only assumes the base case (usually n=1) is true. Because m may vary as k varies, thus in case 2, we have to assume all values less than k+1 is true, which is also the definition of strong induction.
+
+\subsection*{4.6.28}
+
+The base case n=1 is true: $1=1\times 2^0$.
+
+Let $k\in\mathbb{N}$, and assume that the the theorem holds true for $n=1,2,3,\ldots,k$. We need to prove that $k+1$ can be written as a product of an odd integer and a non-negative integer power of 2, and we do that by looking at the two possible cases, k is even and k is odd.
+
+Case 1: k is even. By assumption, the theorem applies to $n=k$, and so we can write $$k=a+2^b,$$ where $a$ is an odd integer less than k and $b$ is a nonnegative integer. As k is even, it can be expressed as $k-1 + 2^0$ which k-1 is odd, and $k+1$ can be expressed as $k-1 + 2^1$, the theorem holds true. 
+
+case 2: k is odd. Then k+1 is even and can be expressed as 2m which m is an integer less than k, so by strong induction, we proved all cases of k is true, which means the theorem is true for $n=k+1$, and hence, by strong induction, for any $n\in\mathbb{N}$
+
+\subsection*{4.6.29}
+
+1. n=1, $x+\frac{1}{x}$ is indeed an integer.
+
+2. assume $x^n+\frac{1}{x^n}$ is an integer for $n=1,2,\ldots,k, k\in\mathbb{N}$
+
+3. show $x^{n+1}+\frac{1}{x^{n+1}}$ is also an integer:
+
+$$\begin{aligned}&=(x^n+\frac1{x^n})(x+\frac1x)-x^{n-1}-x^{1-n}\\&=(x^n+\frac1{x^n})(x+\frac1x)-(x^{n-1}+\frac1{x^{n-1}})\end{aligned}$$
+
+by the strong induction hypothesis, $x^n+\frac1{x^n}$ and $x^{n-1}+\frac1{x^{n-1}}$ are both integers, and $x+\frac1x$ also is. Thus by PSMI, the statement holds true for all $n\in\mathbb{N}$.\qed
+
+\subsection*{4.6.30}
+
+(idk)
+
+The proof simply says that k is always greater than 1, but how about the case n=0. k=1 which is less than 1. The assumption is wrong. In addition, the fact that n=0 implies n=0+1 has not been proven, so using the fact that is trying to prove gives circular reasoning.
+
+\subsection*{4.6.31}
+
+Considering k=1, $5^{k-1}$ cannot be 5 since we assumed n to be natural, but 0 is not.
+
+\subsection*{4.6.32}
+
+In fact, a person with k+1 hairs is less bald compared to k hairs, even though both cases are bald, but the degree of bald is different, so k does not imply k+1, false induction.
+
+\subsection*{4.6.33}
+
+(a) $$\begin{aligned}y-1&\geq0\\x-1&\leq0\\(y-1)(x-1)&\leq0\\xy-x-y+1&\leq0\\x+y&\geq xy+1\end{aligned}$$
+
+(b) 
+
+1. When all $a_i = 1$, the inequality always hold true.
+
+2. When all $a_i \leq 1$ and not all $a_i=1$, then the product of them must be less than 1; When all $a_i \geq 1$ and not all $a_i=1$, then the product of them must be greater than 1.
+
+3. For the product of all $a_i$ to be 1, either all $a_i$ are 1, or there exists some values of $a_i<1$ and some values of $a_i>1$.
+
+Combining 3 cases, we get the inequality $a_i\leq 1\leq a_j$ for some $i\neq j$
+
+Another way: Proof by contrapositive: 
+
+Assume $a_1\cdot a_2 \cdots a_n=1 \implies a_i\leq1\leq a_j, i\neq j$, the contrapositive of this implication is for all i and j, $a_i\leq1\leq a_j \land i=j$, which means that at most 1 element is 1, and either all elements are $\geq 1$ or $\leq 1$, implies $a_1\cdot a_2 \cdots a_n\neq1, n\geq 2$. Let $a_1 =1$, then $a_1\cdot a_2 \cdots a_n = 1\cdot a_2 \cdots a_n = \cdot a_2 \cdots a_n$, either all elements are greater than 1, or less than 1. Both cases their product cannot be 1. This proves the contrapositive is true, implies that the statement is also true. \qed
+
+(c) \textbf{idk}
+
+When n=1, $n\geq n$ holds true; when n=2, $xy=1$, $x+y\geq xy+1 \iff x+y\geq 2$, which also holds true. 
+
+Now we assume $a_1\cdots a_k=1$ and $a_1+\cdots+a_k\geq k$ for some naturals k. Show that $a_1+\cdots+a_k+a_{k+1}\geq k+1$
+
+(idk (c) and (d) later ig.)
+
+
+ \end{document}

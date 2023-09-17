@@ -1,0 +1,730 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumerate}
+% Margins
+\usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
+% Colour table cells
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+% Get larger line spacing in table
+\newcommand{\tablespace}{\\[1.25mm]}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\tstrut{\rule{0pt}{2.0ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+\title{Mat102 Chapter 3}
+\author{Joseph Siu}
+\date{\today}
+
+
+
+
+
+\begin{document}
+\maketitle
+
+\section*{3.7 Exercises for Chapter 3}
+\subsection*{3.7.1}
+\textbf{(a) $A \implies C$}
+
+False. C is only true when $x = \pm 1$, so just because A is satisfied, it doesn't necessarily mean that C is also satisfied.
+
+\textbf{(b) $(A \land B) \implies C$}
+
+False. The intersection of A and B is \{1,2\}, even though 1 implies C, 2 still does not, thus the implication doesn't hold.
+
+\textbf{(c) $D \implies [A \land B \land (\neg C)]$}
+
+True. The intersection of A and B is \{1,2\}, and the intersection of \{1,2\} and $x \neq \pm 1$ is 2 only, which is equivalent to D, $x=2$. Since $D \iff [A \land B \land (\neg C)]$, therefore, $D \implies [A \land B \land (\neg C)]$. \qed
+
+\subsection*{3.7.2}
+\textbf{(a) $\forall x \forall y (x \geq y)$}
+
+For all x and y, x is greater or equal to y. This is false as x can be less than y, such as x=0 and y=1.
+
+\textbf{(b) $\exists x \exists y (x \geq y)$}
+
+There exist some values of x and y such that x is greater or equal to y. This is true as one example can prove the entire statement: x=5, y=0.
+
+\textbf{(c) $\exists y \forall x (x \geq y)$}
+
+There exist some values of y such that for all values of x, x is greater or equal to y. This is false since there isn't a smallest real number.
+
+\textbf{(d) $\forall x \exists y (x \geq y)$}
+
+For all x values there exist some y values that is less than x. True as x can never be the smallest real number.
+
+\textbf{(e) $\forall x \exists y\left(x^2+y^2=1\right)$}
+
+For all x values there exist some y values such that $x^2+y^2=1$. Because the square of anything is greater or equal to 0, so if $x^2$ is greater than 1, then there are no real solutions for y. But if $x^2$ is less or equal to 1, there are. Therefore, false statement.
+
+\textbf{(f) $\exists x \forall y\left(x^2+y^2=1\right)$}
+
+There exist some values of x such that for all values of y, $x^2+y^2=1$. Similar to (e) as x and y are interchangeable. Thus, false. 
+
+\subsection*{3.7.3}
+
+\textbf{(a) There is a smallest positive real number.}
+
+\centerline{$(\exists x \in (0,\infty ))(\forall y \in (0,\infty ))(x\leq y)$} 
+
+The negation of this statement is $\neg (\exists x \in (0,\infty ))(\forall y \in (0,\infty ))(x<y) \iff (\forall x \in (0,\infty ))(\exists y \in (0, \infty))(x \geq y)$.
+
+When $y = \frac{x}{10}$, the equation becomes $x \geq \frac{x}{10} \iff 1 \geq \frac{1}{10}, x\neq 0$, which is always true, proves that the negation of the statement is always true, so that the original statement is always false.
+
+\textbf{(b) Every integer is a product of two integers.}
+
+\centerline{$(\forall x \in \mathbb{Z})(\exists a \in \mathbb{Z})(\exists b \in \mathbb{Z})(x=a\times b)$}
+
+Let a = x, b = 1, because $x \times 1 = x$, so this statement holds true for all integers.
+
+\textbf{(c) The equation $x^2+y^2=1$ has a solution $(x,y)$ in which both $x$ and $y$ are natural numbers.}
+
+\centerline{$(\exists x \in \mathbb{N})(\exists y \in \mathbb{N})(x^2+y^2=1)$}
+
+Proving by contradiction:
+Assuming there exist some values of x and y such that $x^2+y^2=1$, then,
+\begin{align*}
+    x &= 1+n, n\in \mathbb{N}\cup \{0\} \\
+    y &= 1+m, m\in \mathbb{N}\cup \{0\} \\
+    x^2+y^2&=1 \\
+    (1+n)^2 + (1+m)^2 &= 1 \\
+    1^2+2n+n^2+1^2+2m+m^2 &= 1 \\
+    2n+n^2+2m+m^2 &= -1 \\
+    \because 2n, n^2, 2m, m^2 &\geq 0 \\
+    \therefore n, m &\notin \mathbb{N}\cup \{0\} \\
+    \therefore x, y &\notin \mathbb{N} 
+\end{align*}
+Contradicting the fact that x and y are natural numbers, thus there is no solution. 
+
+\textbf{(d) Every real number can be written as a difference of two positive real numbers.}
+
+\centerline{$(\forall x \in \mathbb{R})(\exists n, m \in (0,\infty ))(x=n-m)$}
+
+if x is negative, let n be 1, m be $|x|+1$, $n-m=1-1-|x|=-|x|=x$,
+
+if x is 0, let n be 1, m be $|x|+1$, then, $n-m=1-1-|0|=0=x$,
+
+if x is positive, let n be $|x|+1$, m be 1, $n-m=1+|x|-1=|x|=x$.
+
+All support the assumption, thus this is a true statement. 
+
+\subsection*{3.7.4}
+
+\textbf{(a) Write the statement $S\cap T\nsubseteq U$ using the logic symbols (but without the symbol '$\neg$'}
+
+\centerline{$(\forall x)[((x \in S)\land (x \in T)) \nRightarrow (x \in U)]$}
+
+\textbf{(b) Write the statement $S\subseteq T \cup U$ and its negation using the logic symbols}
+
+\centerline{$(\forall x)[(x \in S)\implies ((x \in T)\lor(x \in U))]$}
+
+\subsection*{3.7.5}
+
+\textbf{(a) Is the statement $(\forall x \in \mathbb{R})[P(x)\implies Q(x)]$ true or false? Why?}
+
+False statement when $x \in (0,1]$
+
+\textbf{(b) Is the statement $[(\forall x \in \mathbb{R})P(x)]\implies [(\forall x \in \mathbb{R})Q(x)]$ true or false? Why?}
+
+This is a true statement since the left side is always false. 
+
+\subsection*{3.7.6}
+
+\textbf{(a)}
+
+$(\forall x \in \mathbb{R})(\exists y \in \mathbb{R})(x+y < 1)$
+
+$(\exists y \in \mathbb{R})(\forall x \in \mathbb{R})(x+y<1)$
+
+\textbf{(b)}
+
+\begin{align*}
+    &\neg (\forall x \in \mathbb{R})(\exists y \in \mathbb{R})(x+y < 1) \\
+    &\iff (\exists x \in \mathbb{R})(\forall y \in \mathbb{R})(x+y \geq 1) \\
+    &\neg (\exists y \in \mathbb{R})(\forall x \in \mathbb{R})(x+y<1)\\
+    &\iff (\forall y \in \mathbb{R})(\exists x \in \mathbb{R})(x+y\geq 1)
+\end{align*}
+
+\textbf{(c)}
+
+R is true when y = -x+0.50, then x+y=0.5<1
+
+S is a false statement since $x+y<1 \iff y<1-x$, and x can be infinity small, there is always a number x that is smaller than y, moreover, smaller than y+1 
+
+\subsection*{3.7.7}
+
+$|x-3|=1$ is true for x = 2 or 4,
+
+$|x-2|=2$ is false when for all x values except 0 and 4,
+
+the statement is true when $|x-3|\neq 1$,
+
+for 2 and 4, the statement is true for x=4 but not x=2, thus x=2 is the only value that turns this statement into false
+
+\subsection*{3.7.8}
+
+\textbf{(a)}
+
+%NOTE: requires \usepackage{color}
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & ( & P & $\land$ & Q & ) & $\lor$ & $\lnot$ & Q & \\
+\hline 
+T & T &  &  & T & T & T &  & \textcolor{red}{T} & F & T & \\
+T & F &  &  & T & F & F &  & \textcolor{red}{T} & T & F & \\
+F & T &  &  & F & F & T &  & \textcolor{red}{F} & F & T & \\
+F & F &  &  & F & F & F &  & \textcolor{red}{T} & T & F & \\
+\end{tabular}
+
+\textbf{(b)}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+P & Q &  & P & $\rightarrow$ & ( & P & $\rightarrow$ & Q & ) & \\
+\hline 
+T & T &  & T & \textcolor{red}{T} &  & T & T & T &  & \\
+T & F &  & T & \textcolor{red}{F} &  & T & F & F &  & \\
+F & T &  & F & \textcolor{red}{T} &  & F & T & T &  & \\
+F & F &  & F & \textcolor{red}{T} &  & F & T & F &  & \\
+\end{tabular}
+
+\textbf{(c)}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & ( & P & $\rightarrow$ & Q & ) & $\rightarrow$ & P & \\
+\hline 
+T & T &  &  & T & T & T &  & \textcolor{red}{T} & T & \\
+T & F &  &  & T & F & F &  & \textcolor{red}{T} & T & \\
+F & T &  &  & F & T & T &  & \textcolor{red}{F} & F & \\
+F & F &  &  & F & T & F &  & \textcolor{red}{F} & F & \\
+\end{tabular}
+
+\textbf{(d)}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+P & Q &  & ( & P & $\rightarrow$ & Q & ) & $\rightarrow$ & ( & P & $\land$ & Q & ) & \\
+\hline 
+T & T &  &  & T & T & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+T & F &  &  & T & F & F &  & \textcolor{red}{T} &  & T & F & F &  & \\
+F & T &  &  & F & T & T &  & \textcolor{red}{F} &  & F & F & T &  & \\
+F & F &  &  & F & T & F &  & \textcolor{red}{F} &  & F & F & F &  & \\
+\end{tabular}
+
+\textbf{(e)}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+P & Q &  & ( & P & $\land$ & Q & ) & $\leftrightarrow$ & ( & P & $\lor$ & Q & ) & \\
+\hline 
+T & T &  &  & T & T & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+T & F &  &  & T & F & F &  & \textcolor{red}{F} &  & T & T & F &  & \\
+F & T &  &  & F & F & T &  & \textcolor{red}{F} &  & F & T & T &  & \\
+F & F &  &  & F & F & F &  & \textcolor{red}{T} &  & F & F & F &  & \\
+\end{tabular}
+
+\textbf{(f)}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+P & Q &  & ( & P & $\lor$ & $\lnot$ & Q & ) & $\rightarrow$ & ( & Q & $\land$ & $\lnot$ & P & ) & \\
+\hline 
+T & T &  &  & T & T & F & T &  & \textcolor{red}{F} &  & T & F & F & T &  & \\
+T & F &  &  & T & T & T & F &  & \textcolor{red}{F} &  & F & F & F & T &  & \\
+F & T &  &  & F & F & F & T &  & \textcolor{red}{T} &  & T & T & T & F &  & \\
+F & F &  &  & F & T & T & F &  & \textcolor{red}{F} &  & F & F & T & F &  & \\
+\end{tabular}
+
+\subsection*{3.7.9}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & P & $\rightarrow$ & $\lnot$ & Q & \\
+\hline 
+T & T &  & T & \textcolor{red}{F} & F & T & \\
+T & F &  & T & \textcolor{red}{T} & T & F & \\
+F & T &  & F & \textcolor{red}{T} & F & T & \\
+F & F &  & F & \textcolor{red}{T} & T & F & \\
+\end{tabular}
+
+\subsection*{3.7.10}
+
+\textbf{(a)}
+
+$P\lor (Q\implies (\neg R))$ is a false statement when P is false, Q is true, and R is true
+
+\textbf{(b)}
+
+$[(P\land Q)\lor R]\implies (R\lor S)$ 
+
+Firstly, the left side of implication must be true so that the entire statement can be a false statement (assuming there exist some false statements),
+
+so, either $P\land Q$ is true, or $R$ is true, or both of them.
+
+Secondly, $R\lor S$ must be false so that the implication is false,
+
+therefore, both R and S are false,
+
+this implies that $P\land Q$ must be true, which means both P and Q are true,
+
+in conclusion, P=true, Q=true, R=false, S=false.
+
+\subsection*{3.7.11}
+
+\begin{tabular}{@{ }c@{ }@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+P & Q & R &  & ( & P & $\land$ & $\lnot$ & Q & ) & $\rightarrow$ & ( & R & $\lor$ & Q & ) & \\
+\hline 
+T & T & T &  &  & T & F & F & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+T & T & F &  &  & T & F & F & T &  & \textcolor{red}{T} &  & F & T & T &  & \\
+T & F & T &  &  & T & T & T & F &  & \textcolor{red}{T} &  & T & T & F &  & \\
+T & F & F &  &  & T & T & T & F &  & \textcolor{red}{F} &  & F & F & F &  & \\
+F & T & T &  &  & F & F & F & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+F & T & F &  &  & F & F & F & T &  & \textcolor{red}{T} &  & F & T & T &  & \\
+F & F & T &  &  & F & F & T & F &  & \textcolor{red}{T} &  & T & T & F &  & \\
+F & F & F &  &  & F & F & T & F &  & \textcolor{red}{T} &  & F & F & F &  & \\
+\end{tabular}
+
+(a) When P=false, Q=false, R=true, the statement is true
+
+(b) when all are true, then the statement is still true
+
+\subsection*{3.7.12}
+
+Showing the truth tables is enough to prove all propositions,
+
+(a)
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{ }}
+P & Q & $\lnot$ & ( & P & $\land$ & Q & )\\
+\hline 
+T & T & \textcolor{red}{F} &  & T & T & T & \\
+T & F & \textcolor{red}{T} &  & T & F & F & \\
+F & T & \textcolor{red}{T} &  & F & F & T & \\
+F & F & \textcolor{red}{T} &  & F & F & F & \\
+\end{tabular}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & $\lnot$ & P & $\lor$ & $\lnot$ & Q & \\
+\hline 
+T & T &  & F & T & \textcolor{red}{F} & F & T & \\
+T & F &  & F & T & \textcolor{red}{T} & T & F & \\
+F & T &  & T & F & \textcolor{red}{T} & F & T & \\
+F & F &  & T & F & \textcolor{red}{T} & T & F & \\
+\end{tabular}
+
+(b)
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{ }}
+P & Q & $\lnot$ & ( & P & $\lor$ & Q & )\\
+\hline 
+T & T & \textcolor{red}{F} &  & T & T & T & \\
+T & F & \textcolor{red}{F} &  & T & T & F & \\
+F & T & \textcolor{red}{F} &  & F & T & T & \\
+F & F & \textcolor{red}{T} &  & F & F & F & \\
+\end{tabular}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & $\lnot$ & P & $\land$ & $\lnot$ & Q & \\
+\hline 
+T & T &  & F & T & \textcolor{red}{F} & F & T & \\
+T & F &  & F & T & \textcolor{red}{F} & T & F & \\
+F & T &  & T & F & \textcolor{red}{F} & F & T & \\
+F & F &  & T & F & \textcolor{red}{T} & T & F & \\
+\end{tabular}
+
+(d)
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & P & $\leftrightarrow$ & Q & \\
+\hline 
+T & T &  & T & \textcolor{red}{T} & T & \\
+T & F &  & T & \textcolor{red}{F} & F & \\
+F & T &  & F & \textcolor{red}{F} & T & \\
+F & F &  & F & \textcolor{red}{T} & F & \\
+\end{tabular}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+P & Q &  & ( & P & $\rightarrow$ & Q & ) & $\land$ & ( & Q & $\rightarrow$ & P & ) & \\
+\hline 
+T & T &  &  & T & T & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+T & F &  &  & T & F & F &  & \textcolor{red}{F} &  & F & T & T &  & \\
+F & T &  &  & F & T & T &  & \textcolor{red}{F} &  & T & F & F &  & \\
+F & F &  &  & F & T & F &  & \textcolor{red}{T} &  & F & T & F &  & \\
+\end{tabular}
+
+\subsection*{3.7.13}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{ }}
+P & Q & $\lnot$ & ( & P & $\land$ & $\lnot$ & Q & )\\
+\hline 
+T & T & \textcolor{red}{T} &  & T & F & F & T & \\
+T & F & \textcolor{red}{F} &  & T & T & T & F & \\
+F & T & \textcolor{red}{T} &  & F & F & F & T & \\
+F & F & \textcolor{red}{T} &  & F & F & T & F & \\
+\end{tabular}
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & $\lnot$ & P & $\lor$ & Q & \\
+\hline 
+T & T &  & F & T & \textcolor{red}{T} & T & \\
+T & F &  & F & T & \textcolor{red}{F} & F & \\
+F & T &  & T & F & \textcolor{red}{T} & T & \\
+F & F &  & T & F & \textcolor{red}{T} & F & \\
+\end{tabular}
+
+The statement $P\implies Q$ has same truth table as the 2 statements above,
+
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q &  & P & $\rightarrow$ & Q & \\
+\hline 
+T & T &  & T & \textcolor{red}{T} & T & \\
+T & F &  & T & \textcolor{red}{F} & F & \\
+F & T &  & F & \textcolor{red}{T} & T & \\
+F & F &  & F & \textcolor{red}{T} & F & \\
+\end{tabular}
+
+thus same answer for both (a) and (b).
+
+\subsection*{3.7.14}
+
+The first statement is false when R is false, and at least one of P or Q is true.
+
+The second statement is false when R is false, and at least one of P or Q is true. 
+
+Now, we can see that these 2 statements are equivilent logically, verify using truth table:
+
+\begin{tabular}{@{ }c@{ }@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c}
+P & Q & R &  & ( & P & $\lor$ & Q & ) & $\rightarrow$ & R & \\
+\hline 
+T & T & T &  &  & T & T & T &  & \textcolor{red}{T} & T & \\
+T & T & F &  &  & T & T & T &  & \textcolor{red}{F} & F & \\
+T & F & T &  &  & T & T & F &  & \textcolor{red}{T} & T & \\
+T & F & F &  &  & T & T & F &  & \textcolor{red}{F} & F & \\
+F & T & T &  &  & F & T & T &  & \textcolor{red}{T} & T & \\
+F & T & F &  &  & F & T & T &  & \textcolor{red}{F} & F & \\
+F & F & T &  &  & F & F & F &  & \textcolor{red}{T} & T & \\
+F & F & F &  &  & F & F & F &  & \textcolor{red}{T} & F & \\
+\end{tabular}
+
+\begin{tabular}{@{ }c@{ }@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+P & Q & R &  & ( & P & $\rightarrow$ & R & ) & $\land$ & ( & Q & $\rightarrow$ & R & ) & \\
+\hline 
+T & T & T &  &  & T & T & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+T & T & F &  &  & T & F & F &  & \textcolor{red}{F} &  & T & F & F &  & \\
+T & F & T &  &  & T & T & T &  & \textcolor{red}{T} &  & F & T & T &  & \\
+T & F & F &  &  & T & F & F &  & \textcolor{red}{F} &  & F & T & F &  & \\
+F & T & T &  &  & F & T & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+F & T & F &  &  & F & T & F &  & \textcolor{red}{F} &  & T & F & F &  & \\
+F & F & T &  &  & F & T & T &  & \textcolor{red}{T} &  & F & T & T &  & \\
+F & F & F &  &  & F & T & F &  & \textcolor{red}{T} &  & F & T & F &  & \\
+\end{tabular}
+
+\subsection*{3.7.15}
+
+(a) they are not logically equivalent, as the first statement is false when P is true and Q is false, the second statement is false when P is false and Q is true, this gives enough reasoning of why they are not equivalent. 
+
+(b) The first statement can be true when R is true while P is false,  but the second statement with the same values turns into a false statement, thus not equivalent.
+
+(c) Equivalent (true true false / same truth table)
+
+(d) No, the negation is $\neg (P\iff Q)$, which is $(P\implies \neg Q)\land (Q \implies \neg P)$
+
+\subsection*{3.7.16}
+
+contrapositives:
+
+(a) if k is not odd (even), then k is not a prime or k is 2.
+
+(b) If I don't get a good mark in the course, then I did not do my assignments
+
+(c) if $|x|>3$, then $x^2+y^2\neq 9$
+
+(d) if $a \neq 0$ or $b \neq 0$, then $a^2+b^2\neq 0$
+
+(e) If Anna is graduating, then Anna is not failing history or psychology 
+
+\subsection*{3.7.17}
+
+$P\land (\neg P)$ is false for all situations, so contradiction
+
+$P\iff (\neg P$ is never equivalent, so contradiction
+
+$P\lor (\neg P$ is always true, tautology
+
+$P\implies (\neg P$ is a normal statement, neither tautology or contradiction
+
+$(P\land Q\implies Q$ is always true, tautology
+
+\subsection*{3.7.18}
+
+Being a cat implies having 4 legs, not vice versa.
+
+\subsection*{3.7.19}
+
+for all sets A, $A\notin A$
+
+\subsection*{3.7.20}
+
+(a) $\neg ((\forall x\in A)(\exists b\in B)(b>x))\iff (\exists x\in A)(\forall b \in B)(b \leq x)$
+
+(b) $\neg ((\forall x\in \mathbb{R}^+)(\exists n\in \mathbb{N})(\frac{1}{n}<x)) \iff (\exists x \in \mathbb{R}^+)(\forall n\in \mathbb{N})(\frac{1}{n}\geq x)$
+
+which $\mathbb{R}^+$ refers to $(0,\infty)$
+
+\subsection*{3.7.21}
+
+(a) $\begin{matrix}\neg\left(\forall x\in R\right)\left(\exists y\in R\right)\left(x^{2}>y^{2}\right)\\ \iff\left(\exists x\in R\right)\left(\forall y\in R\right)\left(x^{2}\leq y^{2}\right)\end{matrix}$
+
+when x=0, $x^2=0$,
+
+since $y^2\geq 0$, thus this is a true statement. \qed
+
+
+(b) $\begin{matrix}\neg\left(\exists x\in Z\right)\left[\left(x^{2}=\left(x+1\right)^{2}\right)\implies\left(x^{3}\in Z\right)\right]\\ \Leftrightarrow\left(\forall x\in Z\right)\left[\left(x^{2}=\left(x+1\right)^{2}\right)\land (x^3\neq Z)\right)]\end{matrix}$
+
+The left side is always false, so this is a false statement.
+
+(c)$\begin{matrix}\neg\left(\forall n\in N\right)\left[\left(n-1\right)^{3}+n^{3}\neq\left(n+1\right)^{3}\right]\\ \Leftrightarrow\left(\exists n\in N\right)\left[\left(n-1\right)^{3}+n^{3}=\left(n+1\right)^{3}\right]\end{matrix}$
+
+two sides do not intersect, false statement.
+
+(d) $\neg[(\forall x\in R)(x>0)]\Rightarrow[(\forall x\in R)(x=x+1)] \iff \left[\left(\forall x\in R\right)(x>0)\right]\land\left[\left(\exists x\in R\right)\left(x\neq x+1\right)\right]$
+
+
+left side is false thus the entire negation statement is also false.
+
+(e) $\begin{matrix}\neg\left(\forall x\in R\right)\left[\left(x^{2}\leq-1\right)\Rightarrow\left[\left(x+1\right)^{2}=x^{2}+1\right]\right]\\ \Longleftrightarrow\left(\exists x\in R\right)\left[\left(x^{2}\leq-1\right)\land\left[\left(x+1\right)^{2}\neq x^{2}+1\right]\right]\end{matrix}$
+
+False since the left side is always false. 
+
+(f) $\neg(\forall x\in R)[(x>0)\Rightarrow(\exists n\in N)(n\cdot x>1) \iff (\exists x\in R)[(x>0)\land(\forall n\in N)\left(n\times x\leq1\right)]$
+
+For this to be true, we need to find a real number x such that when multiplied by any natural number (1, 2, 3, ...), the result is always less than or equal to 1.
+
+Let's try with an example. If we choose x = 1/2, when n = 1, nx = 1/2 which is less than 1. But when n = 2, nx = 2*(1/2) = 1 which is equal to 1. And when n = 3, nx = 3*(1/2) = 1.5 which is greater than 1. So, x = 1/2 doesn't satisfy the condition for all natural numbers.
+
+However, if we choose a smaller number, for example x = 1/3, then for n = 1 and n = 2, nx is less than or equal to 1, but for n = 3, nx = 3*(1/3) = 1 which is equal to 1 and for n > 3, nx will be greater than 1.
+
+As we can see, as n increases, nx also increases. So there's no real number x that can satisfy this condition for all natural numbers.
+
+In conclusion, the statement is false. There does NOT exist a real number x greater than 0 such that for all natural numbers n, n times x is less than or equal to 1.
+
+(g) $\begin{array}{l l}{{}}&{{\neg\left(\forall x\in R\right)\left(\exists y\in R\right)\left[\left(x+y\right)^{2}=x^{2}+y^{2}\right]}}\\ {{}}&{{\Leftrightarrow\left(\exists x\in R\right)\left(\forall y\in R\right)[\left(x+y\right)^{2}\neq x^{2}+y^{2}]}}\\ \end{array}$
+
+This statement is false when y=0 no matter what x is, thus false statement.
+
+(h) $\begin{matrix}\neg\left(\exists y\in R\right)\left(\forall x\in R\right)\left(\left|x+y\right|=\left|x\right|+\left|y\right|\right)\\ \Leftrightarrow\left(\forall y\in R\right)\left(\exists x\in R\right)\left(\left|x+y\right|+\left|x\right|+\left|y\right|\right)\end{matrix}$
+
+this is true as similar to the proof in the previous chapter.
+
+(i) $\neg\left(\forall x\in Q\right)\left(\exists n\in N\right)\left(n\cdot x\in Z\right)\Leftrightarrow\left(\exists x\in Q\right)\left(\forall n\in N\right)\left(n\cdot x\notin Z\right)$
+
+False. x can be expressed as $\frac{p}{q}$, when n=q, the product of n and x is p which is $\in Z$
+
+(j) $\neg(\forall x\in R)(\forall y\in R)[((x+y\leq7)\land(x y=x))\Rightarrow(x<7)] \iff (\exists x\in R)(\exists y\in R)[((x+y\leq7)\land(x y=x))\land(x\geq7)]$
+
+first and third parts are true when y is 0 or negative, but the second part is true when y is 1, contradiction, so always false, false statement.
+
+\subsection*{3.7.22}
+
+(a)
+
+$\left(\exists M\in Z\right)\left(\forall x\in R\right)\left(x^{2}\leq M\right)$
+
+negation:
+
+$\left(\forall M\in Z\right)\left(\exists x\in R\right)\left(x^{2}>M\right)$
+
+the negation is always true when x=M+1, this implies that the original statement is always false.
+
+(b) $\left(\exists y\in R\right)\left(\forall x\in R\right)\left(\vert x-y\vert=\vert x\vert-\vert y\vert\right)$
+
+negation:
+
+$\left(\forall y\in R\right)\left(\exists x\in R\right)\left(\left|x-y\right|=\left|x\right|-\left|y\right|\right)$
+
+the original equation is apparently true when y=0.
+
+(c) $(\forall x\in R)[(x-6)^{2}=4)\Rightarrow(x=8)]$
+
+neg:
+
+$\left(\exists x\in R\right)\left[\left(\left(x-6\right)^{2}=4\right)\wedge\left(x\neq8\right)\right]$
+
+x=4 makes the negation true, thus statement is false.
+
+(d) $\left(\forall x,y\in R\right)[(x^{2}-y^{2}=9)\implies\left(|x|\geq 3\right)]$
+
+neg:
+
+$\left(\exists x,y\in R\right)[(x^{2}-y^{2}=9)\land\left(|x|<3\right)]$
+
+negation is true when x=3, y=0, thus the statement is false.
+
+(e) $(\forall x\in R)[((x-1)(x-3)=3)\Rightarrow(x-1=3)\land(x-3=3)]$
+
+neg:
+
+$(\exists x\in R)[((x-1)(x-3)-3)\land(x-1\neq3)\land(x-3\neq3)]$
+
+the first part is true when x=0,4. But the restriction is $x\neq 4, 6$, does 0 satisfy the statement, negation is true implies the statement is false.
+
+\subsection*{3.7.23}
+
+There exists a field, and there exists a value a$\in$F, such that $a^3=1$ and $a\neq 1$. The negation is true when a=-1, thus the statement is false.
+
+\subsection*{3.7.24}
+
+(a) the first part is wrong, it should be $\exists x \in Z$
+
+(b) The inequity can changes into $x^2\geq x$, if x=0 this is true; if x is negative, divide both sides by x, it turns into $x\leq 1$ which is always true; if x is positive, divide both sides by x,  statement turns into $x\geq 1$ which is still true. All situations are true shows the statement is also true.
+
+\subsection*{3.7.25}
+
+Unbounded function means there does not exist a value M such that $|f(x)|\leq M$
+
+In other words, the function always has a "higher/further" point than the given M. 
+
+\subsection*{3.7.26}
+
+($a_n$) is not increasing when $a_n > a_{n+1}$ or $a_n = a_{n+1}$  
+
+\subsection*{3.7.27}
+
+(a)
+
+"abcd"'s numeral value is 1000a+100b+10c+d, we know that a+b+c+d=3k, k is an integer. "abcd" can be expressed as (999a+99b+9c)+(a+b+c+d)=3(333a+33b+3c+k), proves that it is divisible by 3. \qed
+
+(b) when 100a+10b+c is divisible by 3, and 99a+9b is also divisible by 3 because of the common factor 3, these imply that a+b+c is also a multiple of 3, proves as required. \qed
+
+Since both sides show the equality, this is can be written as an iff statement.
+
+(c) \textbf{HELP}
+
+\subsection*{3.7.28}
+
+When we take out the sum of all digits from the number, the value left is an addition of all digits times a number that all digits consist of 9, all digits are 9 shows its divisibility of 9, thus the entire addition is also a multiple of 9, when and only when the sum of all digits is also divisible by 9, the entire numeral value is also a multiple of 9, or divisible by 9.
+
+\subsection*{3.7.29}
+
+\begin{align*}
+    (n-1)^2+n^3&=(n+1)^3\\
+    n^2-2n+1+n^3&=n^3+3n^2+3n+1\\
+    2n^2+5n&=0\\
+    n(2n+5)&=0\\
+    n&=0,-\frac{2}{5}
+\end{align*}
+
+this contradicts that n can be any natural number, thus false statement.
+
+\subsection*{3.7.30}
+
+(a) this is equivalent to: when x is odd, then $x^2-1$ is divisible by 8.
+
+Let x be 2k+1, k is an integer, then it becomes $(2k+1)^2-1 = 4k^2+4k$, when k is odd and = 2n+1, n is an integer, then becomes $4(4n^2+4n+1)+4(2n+1)=8(2n^2+3n+1)$, indeed is divisible by 8. When k is even and = 2m, m is an integer, then becomes $4(4m^2)+4(2m)=8(2m^2+m)$ also is divisible by 8. Therefore as the contrapositive statement is true, the original statement is also true. \qed
+
+(b) Contrapositive is $P(x)\land Q(x)$, which P(x) is one of them is even and one is odd. Donate m=2a+1, n+2b, a and b are integers, then the statement becomes $(2a+1)^2+(2b)^2 = 4a^2+4a+1+4b=4(a^2+a+b)+1$, this shows it is not divisible by 4.Also, Q(x) is both m and n are not even, then $m^2+n^2$ is not divisible by 4. m and n can be expressed as 2k+1 and 2j+1 respectively as they are odd, k and j are integers. Now the statement becomes $(2k+1)^2+(2j+1)^2=4k^2+4k+1+4j^2+4j+1=4(k^2+j^2+k+j)+2$, since $4(k^2+j^2+k+j)$ is divisible by 4 and 2 is not, then the entire statement is not divisible by 4, same as required to prove, thus this is true. (bad proof for this one)\qed
+
+(c) Equivalent to if $\sqrt{x+y}=\sqrt{x}+\sqrt{y}$, then x is non-positive or y is non-positive. Squaring both sides, $x+y=x+y+2\sqrt{xy}\iff 0=\sqrt{xy}\iff 0=xy$, this implies that one of x and y is 0, which is non-positive. \qed
+
+(d) when $\frac{x}{\sqrt{x^2+1}}=\frac{y}{\sqrt{y^2+1}}$, x=y: 
+
+$x\sqrt{y^2+1}=y\sqrt{x^2+1}\iff \frac{x}{y}=\frac{\sqrt{x^2+1}}{\sqrt{y^2+1}}$, this shows $\frac{x}{y}$ is positive. Then squaring both sides, $\frac{x^2}{y^2}=\frac{x^2+1}{y^2+1}\iff x^2y^2+x^2=y^2x^2+y^2\iff x^2=y^2\iff |x|=|y|$, since $\frac{x}{y}$ is positive, this indicates x and y have the same sign (+ or -), then x=y.\qed
+
+(e) if $x\geq 3$, then $x^3+5x\neq 40$:
+
+let x = 3 + k, which k is a non-negative real value, then the statement becomes $(3+k)^3+5(3+k)\iff 27+9k+3k^2+k^3+15+5k\iff 42+k^3+3k^2+14k$, all terms are positive and 42 is already greater than 40, thus it can never be equal to 40, proved as required. \qed
+
+\subsection*{3.7.31}
+
+(a) assume that there is a rational solution, then x can be expressed as $\frac{m}{n}$ which m is an integer and n is a natural number, and gcd(m,n)=1. Then the equation becomes
+
+$(\frac{m}{n})^3+(\frac{m}{n})^2=1$
+
+multiply both sides by $n^3$ and move all terms to the left side,
+
+$m^3+m^2n-n^3=0$
+
+now consider all cases,
+
+\begin{enumerate}
+    \item When m \& n are both even, this contradicts the fact that the fraction $\frac{m}{n}$ is in its lowest term, so contradiction occurs. 
+    \item When m \& n are both odd, $m^3, n^3, m^2n$ are all odd, which shows that the left side is always odd, contradicting the fact that 0 is even.
+    \item when only m is even, then $m^3, m^2n$ are even but $n^3$ is still odd, similarly the left side is always odd, same for the case when only n is odd.
+\end{enumerate}
+
+Thus, contradiction occurs in all situations, the statement has no rational solutions indeed. \qed
+
+(b) Using similar approach. $(\frac{m}{n})^3+(\frac{m}{n})+1=0$, multiply by $n^3$ since it is a natural number and can never be 0.
+
+
+$m^3+mn^2+n^3=0$
+
+interchange the variable names for m and n, we get a similar equation as (a)... (lazy to show)\qed
+
+(c) pass
+
+(d) same method. $(\frac{m}{n})^5+(\frac{m}{n})^4+(\frac{m}{n})^3+(\frac{m}{n})^2+1=0$, multiply by $n^5$,
+
+$m^5+m^4n+m^3n^2+m^2n^3+n^5=0$
+
+\begin{enumerate}
+    \item When m and n are both odd, then all terms are odd, 5 terms in total, this gives a odd result which contradicts 0 as an even number.
+    \item when only m or n is even, then the left hand side is always odd, contradicting 0 as an even number.
+    \item when both m and n are even, this also contradicts the fact that gcd(m,n)=1, the fraction $\frac{m}{n}$ is not in its reduced form.
+\end{enumerate}
+
+Thus for all cases contradiction occurs, it has no rational roots.\qed
+
+\subsection*{3.7.32}
+
+(a) First approach: $x^2-4y^2=7\iff (x-2y)(x+2y)=7$, assume x and y are both natural numbers, then 2y is also a natural number similarly to x+2y, then x-2y is an integer, and we know that x-2y is less than x+2y since 2y is positive, so the only solution to this equation is x-2y=1 and x+2y=7, this shows x=4 and y=1.5, contradicting the fact that x and y are both natural numbers. \qed
+
+%Second approach: $x^2-4y^2=7 \iff x^2=4y^2+7$, assume both x and y are natural numbers, then the equation implies that $x^2$ is an odd perfect square since $4y^2$ is always even and 7 is always odd, the addition is always odd. However, the result of $4y^2+7$ is always a multiple of 4 plus 3, $4y^2+7 \iff 4(y^2+1)+3$, let n, a natural number, be $y^2+1$, then right hand side becomes $4n+3$, which since this is an odd perfect square, square rooting $4n+3$ would also give a natural number. $\sqrt{4n+3}$
+
+(b) Similar to (a), $x^2-y^2=10 \iff (x-y)(x+y)=10$, assume x and y are natural numbers, then x-y is integer and x+y is natural. Since y is positive, then x-y is less than x+y, and 2 possible sets of answers:
+\begin{enumerate}
+    \item (x-y)=1 and (x+y)=10, this shows x=5.5 and y=4.5 which contradicts x and y as naturals.
+    \item (x-y)=2 and (x+y)=5, this show x as 3.5 and y=1.5, contradicting the fact that x and y are naturals
+\end{enumerate}
+Both cases show contradiction. \qed
+
+\subsection*{3.7.33}
+
+Assume x and y are both natural numbers.
+\begin{align*}
+     x^2+x+1&=y^2\\
+     4x^2+4x&=4y^2-4\\
+     (2x+1)^2-1&=4y^2-4\\
+     (2x+1)^2&=4y^2-3\\
+     (2x+1)^2&=(2y)^2-3
+\end{align*}
+
+Because the left side is a perfect square, and $(2y)^2$ is also a perfect square of 2y, this equation means there are 2 perfect squares that have a differences of 3. 
+
+Proof by induction and contradiction:
+
+let $n^2$ be the smaller perfect square, and $(n+k)^2$ be the larger perfect square which k and n are natural numbers.
+
+1. let n=1, k=1 be the base case, $n^2=1$, $(n+k)^2=4$, this satisfy the condition that the differences of these 2 perfect squares is 3.
+
+2. when $n \Rightarrow n+1$, k remains 1, $(n+1)^2=n^2+2n+1$ and $(n+1+k)^2=(n+2)^2=n^2+4n+4$, the differences is 2n+3, since n is natural, thus the differences is always greater than 3.
+
+3. when $k \Rightarrow k+1$, n remains 1, $n^2=1$, $(n+k+1)^2=k^2+2k+1$, the differences is $k^2+2k$, because k is natural, $k^2$ and 2k both increase as k increases, and $k^2+2k=3$ when k=1. Therefore, the differences is 3 iff k=1,
+
+4. when $n\implies n+1$ and $k\implies k+1$, $(n+1)^2=n^2+2n+1$, $(n+1+k+1)^2=n^2+2kn+4n+k^2+4k+4$, the differences is $2kn+2n+k^2+4k+3$, the first 4 terms are always positive and greater than 0 as k and n are naturals, so the result is always greater than 3.
+
+These conclude that n=1, k=1 is the only case for the differences to be 3. For this question, $(2y)^2$=4 and $(2x+1)^2=1$, this gives y=1 and x=0, contradicting the fact that x and y are both natural.\qed
+
+\subsection*{3.7.34}
+
+8x8 check board, originally it contains 32 white and 32 black positions, after deletion it becomes 30 and 30 respectively. number of white blocks covered can be expressed as 3a+b, black blocks as a+3b, which a is the number of the first type of copy and b is the number of the second type of copy. we need to cover 30 of each, so we can equate then: $3a+b=30=a+3b \iff 2a=2b \iff a=b=7.5$, contradicting the fact that a and b are non-negative integers. Thus impossible.\qed
+
+\subsection*{3.7.35}
+
+(a) M = 2*3*4+1=25, which is not a prime number (divisible by 5, a prime number).
+
+(b) 19020 and 48071, which 48071 is divisible by 53, and obviously 19020 is divisible by 2, both are prime numbers. 
+
+ \end{document}

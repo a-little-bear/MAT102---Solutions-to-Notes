@@ -1,0 +1,593 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{hyperref}
+% Margins
+\usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
+% Colour table cells
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+% Get larger line spacing in table
+\newcommand{\tablespace}{\\[1.25mm]}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\tstrut{\rule{0pt}{2.0ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+\title{Mat102 Chapter 5}
+\author{Joseph Siu}
+\date{\today}
+
+
+
+
+
+\begin{document}
+\maketitle
+
+\section*{5.6 Exercises for Chapter 5}
+
+\subsection*{5.6.1}
+
+(A) bijection (pass the horizontal line test and covers fully the codomain)
+
+(B) surjection (doesn't pass the horizontal line test but covers fully the codomain)
+
+(C) neither (not injection since it doesn't pass the horizontal line test, and not surjection since the codomain is not fully covered)
+
+(D) injection but not surjection (one to one but not fully covering the codomain)
+
+(E) neither injection nor surjection (doesn't pass horizontal line test and but folly covering the codomain)
+
+(F) surjection but not injection (covering $[-6,0]$ but with duplication) 
+
+\subsection*{5.6.2}
+
+(A) Surjection but not injection; the codomain's from 1 to infinity are all covered, but multiple times.
+
+(B) injection but not surjection, not all real (negatives) are covered, but indeed one to one
+
+(C) the result is never negative, so not surjectiion, also x and y are interchangeable wit the same output, so also not injection, thus, neither. 
+
+(D) $x^3$ is bijection, meaning that it is both injection and surjection.
+
+(E) by the graph, neither.
+
+(F) bijection (straight line)
+
+(G) Interchangeable so not injection, but surjection since it covers the entire $\mathbb{N}$
+
+\subsection*{5.6.3}
+
+(A) Not surjection (output must be greater than 1); and not injection by a counter example (5,2) and (2,3)) 
+
+(B) straight line with slope, both surjection and injection = bijection 
+
+(C) not injection since x and y are interchangeable, but surjection as g(x,0)=x
+
+(D) Even function (with full domain), and  the output can never be negative, so neither
+
+(E) Not injection as r(x)=r(-x) and $x\neq -x$ but indeed it is surjection, fully covering its codomain
+
+(F) straight line with slope (pattern), both bijection 
+
+(G) Not surjection as the minimum value t(1,1)=1+1=2 is greater than 1; also not injection as a and b are interchangeable, thus neither injection nor surjection. 
+
+\subsection*{5.6.4}
+
+1. It is injection as no 2 distinct x values have the same y values
+
+2. Surjection as all y values are covered ($(-\infty,0]\cup (0,\infty)$).
+
+\subsection*{5.6.5}
+
+one-to-one means injective; and onto means surjective.
+
+The first function is indeed one-to-one, but not onto since $x^3=2$ is never true when x is an integer. 
+
+\subsection*{5.6.6}
+
+$\mathbb{R},\mathbb{R},\mathbb{Z}$ are all complete fields with the existence of negatives, so both -x and x exist and $(-x)^2=x^2$, contradicting the definition of injection, so the last one is the only correct one. 
+
+Also, If $[0,\infty)\Rightarrow[0,\infty)$ is injective, then this implies that the naturals within domain and codomain are also injective (as 2 subsets)
+
+\subsection*{5.6.7}
+
+We can easily eliminate the 1st, the 3rd, and the 4th functions since $(-x)^6=x^6$ and both -x and x can be in the domain of the function. Now only the 2nd function left.
+
+\subsection*{5.6.8}
+
+(A) The function is surjective as all outputs are covered by the function f
+
+(B) The function is bounded as all f values' absolute values are less than a real number M
+
+(C) All f values are one-to-one, which means this function is injective
+
+\subsection*{5.6.9}
+
+To prove the function $f(x)=x\cdot |x|$ is a bijection, we need to prove both it is an injection and a surjection.
+
+Firstly, let's show the function is surjective.
+
+\begin{gather*}
+    f(a)=f(a'), a,a'\in\mathbb{R}\\
+    a\cdot|a|=a'\cdot|a'|\\
+\end{gather*}
+
+Consider all cases,
+
+1. When both are nonnegative, then $a^2=(a')^2\iff a=a'$
+
+2. When both are negative, then $-a^2=-(a')^2\iff a=a'$
+
+3. When $a<0$ and $a'\geq 0$, $-a^2=(a')^2$ which has no real solution, similar case for $a\geq 0$ and $a'<0$
+
+All possible cases show $a=a'$, thus this holds true for all cases / values. And so, the function is indeed surjective. 
+
+Secondly, to show the function f is injective, we can use the graph.
+
+Consider 2 cases, when $x\geq 0$, $f(x)=x^2$, when $x<0$, $f(x)=-x^2$, by the graph, this shows both the injection and surjection properties of the function. 
+
+\subsection*{5.6.10}
+
+(A) $f(1)=1+(-1)^2=2$, $f(2)=2+(-1)^3=1$, $f(3)=3+(-1)^4=4$, $f(4)=4+(-1)^5=3$
+
+(B) (C) By the pattern and interpreting the meaning of the behavior of the function, we notice that when n is odd, it gives n+1, and when n is even, it gives n-1. Firstly this function is truly a one-to-one function as the output is unique: for all even n, the output is odd and unique; for all odd n, the output is even and unique. Secondly, this is also onto / surjective as the output is covering from 1, 2, 3, 4, to infinity, matching the codomain of the defined function f which is $\mathbb{N}$. 
+
+\subsection*{5.6.11}
+
+(A) f(1)=(Jan,1), f(32)=(Feb,1), and f(359)=(Dec, 25)
+
+(B) As no 2 distinct days have both the same month and the same date, so f is injective.
+
+(C) f is not surjective as some combinations are not covered by f, for instance, (Feb, 31). 
+
+\subsection*{5.6.12}
+
+(A) No, an arbitrary number $x_1$ in [0,1] can still be equal to another arbitrary number $x_2$ in [1,2] even both intervals are injective themself.
+
+(B) Yes, as either of the interval is already fully covering the codomain, when codomain remains the same, additional domain does not change the fact that the codomain is fully covered by the previous intervals, thus still surjective.
+
+\subsection*{5.6.13}
+
+We want to show that when f(x)=f(y), x must be equal to y. $0\geq5|x-y \iff 0\geq |x-y|$, we know that the absolute value must be greater or equal to 0, so |x-y|, in this case, muse be  equal to 0, which shows x=y, as required to justify that the function is injective. \qed
+
+\subsection*{5.6.14}
+
+We want to show that when $f(n)=f(m)$, which n and m are naturals, implies $n=m$. $sin(n)=sin(m)$, we know that sine is a periodic function which has a period of $2\pi$, also, by the definition of periodic function, we know that $sin(n+2k\pi)=sin(n),k\in\mathbb{N}$. There are 2 cases for n and m.
+
+1. When $n=m$, the equally definitely holds.
+
+2. when $n\neq m$, m must be a natural such that $m=n+2k\pi,k\in\mathbb{N}$. We can eliminate this case by showing that $n+2k\pi$ can never be a natural number:
+
+Proof by contradiction:
+
+Assuming that $n+2k\pi$ is indeed a rational, specifically a natural number, denoted by m. $m-n$ is still a rational number by the closure under the rational field ($m+(-n)\in\mathbb{Q}, m,n\in\mathbb{Q}$). As k is in the rational field, same for 2, so 2k is also a rational number, dividing m-n by the reciprocal of 2k, the result, which is $\pi$, is also a rational number by the closure of rational field. But, in fact, $\pi$ is an irrational number (given in the question), contradiction occurs. Thus m cannot be a rational number, the second case can never occur.
+
+Therefore, $n=m$ is the only possible case for $f(n)=f(m)$, we proved that f is injective. \qed
+
+\subsection*{5.6.15}
+
+(A) Bijection means the function f is both injective and surjective.
+
+let x be an arbitrary value in domain A, and f(x)=y.
+
+1. $f^{-1}(f(x))=f^{-1}(y)=x$ which is true by the definition of inverse function.
+
+let x be an arbitrary value in codomain B, and f(y)=x.
+
+2. $f(f^{-1}(x))=f(y)=x$ which is true by the definition of inverse function.
+
+(B) By the definition of inverse, g(f(x))=x and f(g(x))=x are true if and only if f is the inverse of g. To allow inverse to exist, the functions g and f must both be injective and surjective, which means both of them are bijective, showed as required. \qed
+
+\subsection*{5.6.16}
+
+(A) A counterexample can show this is not true: $sin^{-1}(sin(0+2\pi))=sin^{-1}(sin(0))=sin^{-1}(0)=0$, when $x=2\pi$, the result is 0 which are not equal. In addition, sin(x) is not injective since it is periodic, this shows that a codomain value can leads to multiple domain values, contradicting the fact that the inverse is also a function. \qed
+
+(B) x is restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ And within the interval, function tan(x) is bijective, this indicates that the inverse function is also bijective, so the statement always hold true. \qed
+
+(C) interchange g(x) and x, then replace g(x) with $g^{-1}(x)$, the equation becomes $x=(g^{-1}(x))^2 \iff g^{-1}(x)=\pm \sqrt{x}$, but we know that the domain is restricted to $(-\infty,0]$, so $g^{-1}(x)=-\sqrt{x}$. 
+
+\subsection*{5.6.17}
+
+$$g(f(9,4))=g(\frac{9+1}{4+1})=g(2)=\sqrt{2^2+5}=3$$
+
+$$f(g(2),g(\sqrt{20}))=\frac{g(2)+1}{g(\sqrt{20}+1}=\frac{\sqrt{2^2+5}+1}{\sqrt{20+5}+1}=\frac{4}{6}=\frac{2}{3}$$
+
+\subsection*{5.6.18}
+
+(A) f is injective as no 2 different m values can have the same output (for instance, same 2m)
+
+(B) g is c learly not surjective as absolute value only outputs nonnegative values, but Z contains negatives.
+
+(C) $g(f(x)): Z \rightarrow Z\cap[0,\infty), g(f(x))=g(2x,x-1)=|2x\cdot (x-1)|$
+
+(D) $f(g(m,n)): Z\times Z \rightarrow Z\times Z, f(g(m,n))=f(|m\cdot n|)=(2|m\cdot n|,|m\cdot n|-1)$
+
+\subsection*{5.6.19}
+
+(A) g has an inverse which is $g^{-1}(x)=\frac{x-1}{2}$
+
+(B) $$g(g(g(x)))=g(g(2x+1))=g(2(2x+1)+1)=2(2(2x+1)+1)+1=8x+7$$
+
+\subsection*{5.6.20}
+
+Given g is injective, we now that $g(x)=g(x')\implies x=x'$.
+
+$$g(x)=g(x')\iff 3\cdot [f(x)]^2+1=3\cdot [f(x')]^2+1 \iff [f(x)]^2=[f(x']^2$$
+
+Two possible cases, $f(x)=f(x')$ or $f(x)=-f(x')$, but since this implies $x=x'$ and f is a function (not a relation), so the only possible case is $f(x)=f(x')$, which also implies $x=x'$, this also shows that f is injective, as required. \qed
+
+\subsection*{5.6.21}
+
+The base case n=1 holds true $f^1(x)=f(x)=\frac{x}{x+1}=\frac{x}{1+(1)\cdot x}=\frac{x}{1+n\cdot x}$
+
+Now assume the statement holds true for some $k\in\mathbb{N}, f^{k}(x)=\frac{x}{1+k\cdot x}$, and show k+1 also holds true.
+
+\begin{gather*}
+    \begin{aligned}f^{k+1}(x)&=f\circ f^k(x)\\\\&=f\left(f^{k}(x)\right)\\\\&=\frac{f^{k}(x)}{1+f^{k}(x)}\\\\&=\frac{1}{\frac{1}{f^{k}(x)}+1}\\\\&=\frac{1}{\frac{1+kx}{x}+1}\\\\&=\frac{x}{1+kx+x}\\\\&=\frac{x}{1+\left(k+1\right)x}\end{aligned}
+\end{gather*}
+
+We proved the base case n=1 is true, and k implies k+1 for some naturals k, so by PMI, this statement holds true for all naturals. \qed
+
+\subsection*{5.6.22}
+
+Consider the base case n=1, $g^1(x)=g(x)=2x+1=2^1\cdot x + 2^1 - 1$, holds true.
+
+Assume there are some $k\in\mathbb{N}$ hols true, show that k implies k+1:
+
+$$\begin{aligned}g^{k+1}(x)&=g\left(g^k(x)\right)\\\\&=2g^k(x)+1\\\\&=2\left(2^k\cdot x+2^k-1\right)+1\\\\&=2^{k+1}\cdot x+2^{k+1}-1\end{aligned}$$
+
+By PMI, the statement holds true for all n. \qed
+
+\subsection*{5.6.23}
+
+(A) Surjective means the function is onto the entire codomain, in this case, $\mathbb{R}$, since $\mathbb{R}$ is unbounded (no largest / smallest real number), so this is why the function is always unbounded. 
+
+(B) No, the function f can be only unbounded to positive infinity but not negative infinity, and so f is not surjective in this scenario.
+
+(C) Not always strictly monotone when the function is not continuous. For example 
+
+$$f(x)=\begin{cases}\frac1x,x\neq0\\\\0,x=0&\end{cases}.$$
+
+The function is indeed injective but not monotone at the point x=0.
+
+(D) There are 4 possible cases
+
+\begin{enumerate}
+    \item When f and g are both strictly increasing. Let x, y be 2 values in f's domain such that $x<y$. This implies that $f(x)<f(y)$ since f is strictly increasing, similarly $g(f(x))<g(f(y))$ since g is strictly increasing and $f(x)<f(y)$. This shows that the composite function g(f(x)) is also strictly monotone, interchange the letters g and f, we show the same result for f(g(x)) which is also strictly monotone. In addition, we replace the words increasing to decreasing, and change all $<$ symbols to $>$, same conclusion holds.
+    \item When f and g are not both increasing, since they are both monotone, so that one of them is increasing and the other one is decreasing. Let f be the increasing function and g be the decreasing one. x and y are 2 values in f's domain such that $x<y$, this implies that $f(x)<f(y)$ since f is strictly increasing. Now since $f(x)<f(y)$, then $g(f(x))>g(f(y))$ as g is strictly decreasing. Interchange f and g, same results show.
+\end{enumerate}
+
+Both cases support that the composite function is also strictly monotone. \qed
+
+\subsection*{5.6.24}
+
+$$g(h(x))=f(h(x)), x\in h$$
+
+$$g(y)=f(y),y=h(x)$$
+
+for all values in h's codomain B, g and f (all values in their domain B) give the same value in their codomain C. All relations are the same which shows that the 2 functions (connection between domain and codomain) are equivalent, thus they are equal. 
+
+\subsection*{5.6.25}
+
+\begin{gather*}
+    x<y, x,y\in A\\
+    f(x)<f(y), \text{strictly increasing}\\
+    f^{-1}(f(x))=x < y \\
+    y = f^{-1}(f(y))\\
+    f^{-1}(f(x))<f^{-1}(f(y))\\
+    \because f(x)<f(y)\\
+    \therefore f^{-1}(f(x))<f^{-1}(f(y))
+\end{gather*}
+
+This shows that the inverse is also strictly increasing.
+
+For the decreasing case, we switch the less symbol to greater symbol, the conclusion also aligns with the statement which both of them are strictly decreasing. \qed
+
+\subsection*{5.6.26}
+
+We want to show that $g(f(x))=g(f(x')) \implies x=x'$ which f and g are injective, and x and x' are both elements in f's domain.
+
+Firstly we know that g is injective, which means $g(f(x))=g(f(x')) \implies f(x)=f(x')$, and so is f (an injection), so $f(x)=f(x')\implies x=x'$, overall $g(f(x))=g(f(x'))\implies f(x)=f(x')\implies x=x'$, by the definition of injection, the composite function is also injective. \qed
+
+\subsection*{5.6.27}
+
+(A) $g(f(x))$ is injective, let $y=f(x)$ which $y\in\mathbb{R}$, we know that $g(y)$ is injective for the whole domain and codomain, so it is always injective, no example.
+
+(B) Same as A, $g(f(x))\iff g(y)$ which both f(x) and y gives the entire $\mathbb{R}$, and since x and y both have the same range of values (domain), so they are equivalent and interchangeable, and so g(x) is also surjective.
+
+(C) Let g(x) be log(x), and it is indeed surjective. Let f(x) be |x|, which provides a possible case that f is not surjective.
+
+(D) Assume g(f(x)) is injective, then $g(f(x))=g(f(x'))\implies f(x)=f(x')\implies x=x'$, however $ f(x)=f(x') \nrightarrow x=x'$ as f is not injective (it is possible that x and x' are not the same). 
+
+\subsection*{5.6.28}
+
+$f(x)=ln(x)$ and $g(x)=e^x$
+
+$f(g(x))=ln(e^x)=x$ which is bijective
+
+$g(f(x))=e^{ln(x)}=x, x>0$ which is not surjective (thus not bijective too).
+
+\subsection*{5.6.29}
+
+(A) The first set can be expressed using a series: \{0,3,6,9,12,15,...\}, the second set can be expressed as \{2, 4, 6, 8,...\}. We can pair the 2 sets one to one, and a bijection forms. Therefore, they have the same cardinality.
+
+(B) $$f\left(x\right)=\ln\left(x\right)$$ shows that it is possible to form a bijection between $(0,\infty)$ and $\mathbb{R}$, thus they have the same cardinality.
+
+(C) Separate [0,2) into [0,1) and [1,2)
+
+$$f: [0,1)\rightarrow [5,6), f(x)=x+5$$
+
+$$g: [1,2)\rightarrow [7,8), g(x)=x+6$$
+
+Now there is a bijection formed between [0,2) and $[5,6)\cup [7,8)$, this shows that they have the same cardinality. 
+
+(D) $$f\left(x\right)=\ln\left(x+1\right)-1$$, this shows that a bijection is formed between 2 intervals, implying that they have the same cardinality.
+
+\subsection*{5.6.30}
+
+(A) $A_1=\emptyset$, $A_5=\{\frac{1}{4}, \frac{2}{3}, \frac{3}{2}, \frac{4}{1}\}$, $A_{10}=\{\frac{1}{9},\frac{2}{8},\frac{3}{7},\frac{4}{6},\frac{5}{5},\frac{6}{4},\frac{7}{3},\frac{8}{2},\frac{9}{1}\}$
+
+(B) Elements not in its reduced form are repeated. In this case, $\{\frac{2}{8},\frac{4}{6},\frac{5}{5},\frac{6}{4},\frac{8}{2}\}$
+
+(C) $0.28=\frac{28}{100}=\frac{14}{50}=\frac{7}{25}$, so three possible $A_k$'s are 28+100, 14+50, and 7+25, which are 32, 64, and 128.
+
+(D) Bijection relation means all values in the natural set are matched to a distinct rational set's value, so if there is a repeat in values in the rational set, then the relation is no longer injection, implies bijection is not formed, but we wanted bijection to form becasue bijection implies their cardinality are same, and we want to compare their cardinality. Therefore, to solve the question, we have to remove the repeated fractions in order to maintain the injection / bijection relation between rational and natural sets.
+
+(E) $a_{19}=\frac{3}{5}, a_{22}=\frac{1}{8}, a_{27}=\frac{8}{1}$
+
+(F) 
+
+$$f(n)=\begin{cases}
+    0 \quad &\text{if}n=1\\
+    a_{n/2} &\text{if n is even}\\
+    -a_{(n-1)/2} &\text{if n is odd and greater than 1}
+\end{cases}.$$
+
+\subsection*{5.6.31}
+
+\textbf{Step 1 - Defining $A_k$.} We define, for each $k\in\mathbb{N}\setminus\{1\}$, the set $$A_{k}=\left\{\frac{a}{k}:a\in N\cap[1,k)\right\}.$$ For instance, if $k=4$ then $A_k$ is the set of all fractions with positive numerator and denominator, which the denominator is the number k and the numerator is a natural less than k: $$A_4=\left\{\frac{1}{4},\frac{2}{4},\frac{3}{4}\right\}.$$ If $k=7$, we get set $$A_7=\left\{\frac{1}{7},\frac{2}{7},\frac{3}{7},\frac{4}{7},\frac{5}{7},\frac{6}{7}\right\},$$ and so on ($A_1$ is not currently defined). We conclude that each $A_k$ contains exactly $k-1$ elements, with numerators going from 1  to k-1 (with a consistent denominator k) $$A_k=\left\{\frac{1}{k},\frac{2}{k},\frac{3}{k},\cdots,\frac{k-1}{k}\right\}.$$
+
+\textbf{Step 2 - Forming a Sequence.} We arrange the elements of the sets $A_k$ in an infinite sequence, as follows. $$\underbrace{\frac{1}{2}}_{A_2},\underbrace{\frac13,\frac23}_{A_3},\underbrace{\frac14,\frac24,\frac34}_{A_4},\underbrace{\frac15,\frac25,\frac35,\frac45}_{A_5},\underbrace{\frac16,\frac26,\frac36,\frac46,\frac56}_{A_6},\underbrace{\frac17,\frac27,\frac37,\frac47,\frac57,\frac67}_{A_7},\cdots$$ 
+
+\textbf{Step 3 - Removing Repeated Terms.} Note that this sequence contains many repeated elements. For instance, $\frac{1}{2}$, from $A_2$, is repeated as $\frac{2}{4}$ in $A_4$, and as $\frac36$ in $A_6$, etc. We remove, from our sequence, any rational number that has already appeared. 
+
+$$\frac12,\frac13,\frac23,\frac14,\cancel{\frac24},\frac34,\frac15,\frac25,\frac35,\frac45,\frac16,\cancel{\frac26},\cancel{\frac36},\cancel{\frac46},\frac56,\frac17,\frac27,\frac37,\frac47,\frac57,\frac67,\cdots$$ We donate the elements of the resulting sequence by $a_1,a_2,a_3,\ldots$ (for instance, $a_1=\frac12,a_4=\frac14,a_6=\frac15,a_11=\frac56,$ etc.)
+
+This sequence has two important features:
+
+\begin{itemize}
+    \item There are no repeated numbers.
+    \item Every positive rational numbers between (not including) 0 and 1 appears as an element of the sequence. For instance, $\frac{1}{123}$ appears in $A_{123}$ (as the denominator is 123).
+\end{itemize}
+
+\textbf{Step 4 - Adding the Remaining Rational Numbers.} We now enlarge the sequence ($a_n$) to include all rational numbers. We do so by adding the reciprocals of all elements in the existence list, 0, and 1, and all of their negatives (except 0 since $-0=0$), as follows. $$0, 1, -1, a_1, \frac{1}{a_1},-a_1,-\frac{1}{a_1}, a_2, \frac{1}{a_2},-a_2,-\frac{1}{a_2}, a_3, \frac{1}{a_3},-a_3,-\frac{1}{a_3}, a_4, \frac{1}{a_4},-a_4,-\frac{1}{a_4}, a_5, \frac{1}{a_5},-a_5,-\frac{1}{a_5},\cdots$$
+
+This indeed covers all rational numbers based on the axioms of fields:
+
+For any element x in the rational field, there exists a reciprocal which $x\times y=1$ and $y=\frac1x$. So, by the axiom, $\frac1x$ also exists and not equal to x when $x\neq1,0$. Notice that one of x,y muse be between 0 and 1, as the multiplication of 2 numbers greater (less) than 1 will always be larger (smaller) than 1, never equals to 1. Thus, at least one of x and y must be between 0 and 1 (excluding 1 and 0), and the other one must not be except 1. 
+
+Similarly, by the definition, for any x in the rational field, there exists a negative which $x+y=0$ and $y=-x$. Also, y is not equal to x when and only when $x\neq0$.
+
+More explicitly, the sequence can be written as: $$0,1,-1,\frac12,2,-\frac12,-2,\frac13,3,-\frac13,-3,\cdots$$
+
+This modified sequence contains \textbf{all the rational numbers} (positive, negative, and zero). We can now finally construct the desired bijection.
+
+\textbf{Step 5 - Forming the Bijection.} As we now have a sequence, containnig all the rational numbers, and without any repetitions, we can define a function $f:\mathbb{N}\rightarrow\mathbb{Q}$ according to the following diagram. 
+
+\setcounter{MaxMatrixCols}{15}
+
+\begin{equation*}\begin{matrix}\mathbb{N} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & \cdots \\&\downarrow&\downarrow&\downarrow&\downarrow&\downarrow&\downarrow&\downarrow&\downarrow&\downarrow&\\\mathbb{Q} & 0 & 1 & -1 & a_1 & \frac{1}{a_1} & -a_1 & -\frac{1}{a_1} & a_2 & \frac{1}{a_2} & \cdots \end{matrix}\end{equation*}
+
+The function sends 1 to 0, 2 to 1, 3 to -1. Excluding 1, 2, and 3, it also sends numbers divisible by 4 to $a_1,a_2,a_3,\ldots,$ sends numbers that are even and not divisible by 4 to $-a_1, -a_2, -a_3, \ldots,$ numbers that is divisible by 4 when subtracting 1 from it to $\frac{1}{a_1},\frac{1}{a_2},\frac{1}{a_3},\ldots,$ and finally numbers that is divisible by 4 when adding 1 to it to $-\frac{1}{a_1},-\frac{1}{a_2},-\frac{1}{a_3},\ldots$
+
+All rational numbers are covered, which implies that $f$ is surjective. $f$ is also injective, as our sequence $a_1, a_2, a_3,\ldots$ from Step 3 has no repetition.
+
+In conclusion, we have constructed a bijection from $\mathbb{N}$ to $\mathbb{Q}$, and so these two sets have the same cardinality. \qed
+
+\subsection*{5.6.32}
+
+(A) Define $A=\{a_1,a_2,a_3,\ldots\},$ and $B=\{b_1,b_2,b_3,\ldots\}.$ Let $C=A\cup B=\{a_1,b_1,a_2,b_2,a_3,b_3,\ldots\}$. C is also countable as it can be expressed as an infinite sequence. Which means, C can also form a bijection relation to the natural number sequence. So this implies that they have the same cardinality, thus countable. \qed
+
+(B) Writing part A's statement (which has proven as true) logically: If A and B are both countable, then this implies $A\cup B$ is also countable. the contrapositive of this statement is: If $A\cup B$ is not countable, then this implies that A is not countable or B is not countable. Since we have proven the statement is true, so its contrapositive also holds true for all cases. Denote irrational real numbers as $\mathbb{R}\setminus\mathbb{Q}$, we know that $(\mathbb{R}\setminus\mathbb{Q})\cup\mathbb{Q}=\mathbb{R}$ and $\mathbb{R}$ is proven as uncountable. So by the contrapositive statement, At least one of the subsets, $\mathbb{R}\setminus\mathbb{Q}$ or $\mathbb{Q}$, is uncountable. Since $\mathbb{Q}$ is proven as countable, so that $\mathbb{R}\setminus\mathbb{Q}$ must be uncountable, otherwise contradicting the proven statement. Therefore, the set of all irrational real numbers is successfully proven as uncountable based on the proven facts in the chapter and part A. \qed 
+
+\subsection*{5.6.33}
+
+$$A_k=\{(m,n)\colon m,n\in\mathbb{N}\quad\mathrm{and}\quad m+n=k\},$$ (k is a natural greater than 1) To prove the set of all pairs of natural numbers is a countable set, we first need to express it in terms of an infinite sequence, so that it can form a one-to-one bijection relationship to the natural sequence and shows it as countable.
+
+So, $$A_k=\left\{(1,k-1),(2,k-2),\cdots,(k-1,1) \right\}$$
+
+Arrange the sets into a sequence, we get: $$(1,1), (1,2), (2,1), (1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1),\ldots$$ No repeating terms as firstly the combinations cannot be simplified as fractions do, and secondly as the sum of the 2 numbers are different for different $A_k$, so it is impossible to have same combination among different sets, moreover, the first number of the combination is strictly increasing and the second is strictly decreasing so this also avoids the possibility of having the same combination within a set $A_k$, these show that the current sequence covers all combinations only once, also, it covers all possible combinations as it includes all possibilities of the first term with all possibilities of the second term. 
+
+Now we can form a bijection between natural set and the sequence, showing that the sequence is countable, as required. \qed
+
+\subsection*{5.6.34}
+
+(A) Let A = $\mathbb{R}$ and B = $[0,-\infty)$, from the graph $f:\mathbb{R}\rightarrow [0,\infty), f(x)=e^x$ we can see that the graph do form a bijection relation between $\mathbb{R}$ and $(0,\infty)$ which are A and $A\setminus B$. Thus, they have the same cardinality. 
+
+(B) Let a be the number of elements in the set A, and b be the number of elements in the set B. For finite sets, same cardinality implies that their number of elements are also the same, this means $a=a-b \iff 0=-b \iff b=0$, thus the number of elements in set B is 0, showing that it is an empty set $\emptyset$. \qed
+
+\subsection*{5.6.35}
+
+Same as previous questions. form a sequence using $A_0, A_1,\cdots$ we get $$\{\emptyset, \{1\}, \{2\}, \{1,2\},\{3\},\{1,3\},\{4\},\{1,4\},\{2,3\},\{5\},\cdots\}$$
+
+There are no repeated sets as firstly no repeated elements in each set, secondly the sum of all elements in sets are different for sets in different $A_k$, within $A_k$, it is also impossible to have same sets as elements have no order and at least one element is decreased so that a new element can join the set without changing its overall sum of the set. Lastly, we match the sets one-to-one with the natural set, showing that it has the same cardinality as $\mathbb{N}$, implies that the sequence is countable, which the sequence is the set of all finite subsets of $\mathbb{N}$. 
+
+\subsection*{5.6.36}
+
+This is the case similar to prove that the real set is uncountable. We prove the set of all infinite sequences consisting of 0's and 1's by contradiction.
+
+When the set is countable, it forms a bijection between the natural set, which means $\mathbb{N}$ is onto and one-to-one the set of 0's and 1's infinite sequence. 
+
+Assume  the set is countable, we define a number $x$ which the digits can be expressed as $a_1a_2a_3a_4a_5\ldots,$ as follows: $$a_k=\begin{cases}
+    1 \quad&\text{if the $k$-th digit of $f(k)$ is 0}\\
+    0 \quad&\text{if the $k$-th digit of $f(k)$ is 1}
+\end{cases}$$
+The number x is defined in such a way that its $k$-th digit is different than the $k$-th digit of $f(k)$, let $f$ be the function maps all elements in the natural set to the set of infinite sequence, one-to-one and onto. Therefore, $x\neq f(k)$ for all $k\in\mathbb{N}$. Consequently, $x$ is a number in the sequence that does not appear in the list $f(1),f(2),f(3),\ldots,$ and so $f$ is not surjective. This contradicts the fact that $f$ is a bijection, and hence $A$ must be uncountable. \qed
+
+\subsection*{5.6.37}
+
+$P(\mathbb{N})$ is not uncountable as it does not have the same cardinality (more) compared to the natural set.
+
+The intersection between 2 sets is $\left\{1,\frac{1}{2}, \frac13\right\}$, all elements less than or equal to $\frac{1}{4}$ which is 0.25 are less than 0.3 and thus not included in the right set. Thus, it is finite.
+
+$\mathbb{Q}$ is proven as countable in the previous question.
+
+$\mathbb{Z}$ is also proven as countable in the previous question. The set can be written as an infinite sequence, and it can form a one-to-one and onto relations between the natural set.
+
+$(0,\infty)$ has the same cardinality as $\mathbb{R}$, thus uncountable.
+
+\subsection*{5.6.38}
+
+$\mathbb{Z}$ is countable (has the same cardinality as $\mathbb{N}$), and $P(\mathbb{Z})$ always has different (larger) cardinality compared to $\mathbb{Z}$, thus not countable.
+
+By graph, $(2,3)$ has the same cardinality as $\mathbb{R}$, thus also uncountable.
+
+We know that the set of all prime numbers is a subset of the natural set. Thus, as naturals are countable, the set containing all prime numbers is also countable.
+
+We have shown the rational set in the form of infinite sequence, and so because the rational set is countable, so that its subset is also countable.
+
+Finite set: $\{1, 2, 3,\ldots, 999\}$
+
+\subsection*{5.6.39}
+
+$A$ is countable as it can be written in the form of infinite sequence, thus we can pair it one-to-one to the natural set. Similarly $A\cap\mathbb{N}\subseteq A$ so that it is also countable.  Now consider the last 2 possible answers: Since all odd position elements of $A$ are greater than or equal to 2, and all even position elements are less than 1 and greater than 0, therefore, $P(A\cap[1,2])=P(\{2\})=\{2\},$ not infinite. And the only option left is $P(A\cap[0,1])$ which is both infinite and uncountable as $P(\{\frac12,\frac13,\frac14,\ldots\})$ is uncountable when $\{\frac12,\frac13,\frac14,\ldots\}$ is countable. 
+
+\subsection*{5.6.40}
+
+(A) $B$ must be uncountable otherwise they have the same cardinality (both countable = both form bijection to $\mathbb{N}$ = same cardinality) 
+
+(B) when $B=P(A)$, they are both uncountable when $A$ is not countable, and they don't have the same cardinality according to Cantor's theorem.
+
+\subsection*{5.6.41}
+
+$$\{4\}\in A\quad \{5,6\}\in P(A)\quad \{\emptyset\}\subseteq P(A)\quad 5\in A$$
+$$A\in P(A)\quad \{A,\emptyset\}\subseteq P(A)$$
+
+\subsection*{5.6.42}
+
+$$\emptyset\subseteq\mathbb{Z}\quad\mathbb{N}\in P(\mathbb{Z})\quad P(\mathbb{N})\subseteq P(\mathbb{Q})$$
+$$\{\sqrt2,4.5\}\subseteq \mathbb{R}\quad\frac34\in\mathbb{Q}\quad\mathbb{R}\in P(\mathbb{R})$$
+\subsection*{5.6.43}
+
+(A) $$\{2\}\subseteq A\quad \{\{1\}\} \subseteq P(A)  \quad \{1,2\}\in P(A)$$
+$$\{\{1,2\}\}\subseteq A\quad \{1,\{1,2\}\}\in P(A)$$
+
+(B) There are $2^3-3=5$ elements which are $\{\{1,2\},\{1,\{1,2\}\},\{2,\{1,2\}\},\{1,2,\{1,2\}\},\emptyset \}$
+
+\subsection*{5.6.44}
+
+(A) There are $2^{2^{2}}=16$ elements in $P(P(X)),$\begin{align*}
+    P(P(X))&=P(\{\{0\},\{1\},\{0,1\},\emptyset\})\\
+    &=\{\{\{0\}\},\{\{1\}\},\{\{0,1\}\},\{\{0\},\{1\}\},\{\{0\},\{0,1\}\},\{\{1\},\{0,1\}\},\\
+    &\{\emptyset\},\{\{0\},\emptyset\},\{\{1\},\emptyset\},\{\{0,1\},\emptyset\},\{\{0\},\{1\},\{0,1\},\emptyset\},\\
+    &\{\{0\},\{1\},\emptyset\},\{\{0\},\{0,1\},\emptyset\},\{\{1\},\{0,1\},\emptyset\},\{\{0\},\{1\},\{0,1\}\},\emptyset\}
+\end{align*}
+
+(B)  $P(\{2\})=\{\{2\},\emptyset\}$, $P(A)\cup P(B)=\{\{1\},\{2\},\{1,2\},\emptyset \}\cup\{\{2\},\{3\},\{2,3\},\emptyset\}=\{\{1\},\{2\},\{3\},\{2,3\},\{1,2\},\emptyset\}$
+
+\subsection*{5.6.45}
+
+(A) True. We can prove the equality by showing both sides are the subset of each other. 
+
+Let $x\in P(A\cap B),$ then $x\subseteq A\cap B,$ showing that $x\subseteq A$ and $x\subseteq B$. Therefore, $x\in P(A)\cap P(B)$, shown that $P(A\cap B)\subseteq P(A) \cap P(B).$ 
+
+Let $y\in P(A)\cap P(B)$, then $y\in P(A)$ and $y\in P(B)$, showing that $y\subseteq A$ and $y\subseteq B$, which gives $y\subseteq A\cap B$, and implies that $y\in P(A\cap B)$
+, shown that  $P(A) \cap P(B)\subseteq P(A\cap B).$ 
+
+By the definition, when both sides are subsets of each other, then they are equal. 
+
+(B) False. $x\in A, y\in B, x\neq y,\{x,y\}\in P(A\cup B), \{x,y\}\notin P(A)\cup P(B),$ this shows that they are not equal. 
+
+(C) True. Proof by contrapositive: When $P(A)\cap P(B)\neq \{\emptyset\}$ we know that there exists some elements that are in both sets $P(A)$ and $P(B)$ except $\emptyset$. Since $P(x)$ is the power set of the set $x$, and all elements in one of the element of $P(x)$ except $\emptyset$ are in $x$, therefore, there must exists some elements that are all in sets $A$ and $B$. this shows that $A\cap B\neq \emptyset$, proving the contrapositive of the statement. \qed
+
+\subsection*{5.6.46}
+
+(A) $\{1,2\},\emptyset,\text{and}\, \mathbb{N}$
+
+(B) $f$ is surjective. As all subsets of $\mathbb{N},\emptyset,\text{and}\, \mathbb{N}$ itself are all available to get. 
+
+(C) $f$ is not injective, as both $f(\{0,1,2\})$ and $f(\{1,2\})$ give $\{1,2\}$.
+
+\subsection*{5.6.47}
+
+(A) $\{4,5,6,7,8\}$
+
+(B) $f$ is an injection as all different inputs give different outputs. When $f(x)=f(x')$, this means that $\{x+1,x+2,\ldots\}=\{x'+1,x'+2,\dots\}$,  and since both $x$ and $x'$ are naturals, so that the smallest elements are $x+1$ and $x'+1$ respectively. In order to have these sets to be equal, $x+1=x'+1$ must be true which cancel the "1" to have $x=x'$, showing the uniqueness of the codomain value. \qed
+
+(C) $f$ is not surjective as $\emptyset$ in codomain $P(\mathbb{N})$ is not covered by the function $f$. 
+
+\subsection*{5.6.48}
+
+
+
+\subsection*{5.6.49}
+
+\begin{align*}
+    &x\in A, \quad y\in B\\
+    \{x,y\}&\in P(A\cup B)\\
+    P(A\cup B)&=P(A)\cup P(B)\\
+    &\implies \{x,y\} \in P(A)\cup P(B)\\
+    &\implies \{x,y\}\in P(A) \cup \{x,y\}\in P(B)\\
+    &\implies x\in A, y\in A (y\in B)\quad \cup \quad x\in B (x \in A), y\in B\\
+    &\implies B\subseteq A \cup A \subseteq B
+\end{align*}
+
+\subsection*{5.6.50}
+
+$|A|\leq |B|$ implies that there is an injection from $A$ to $B$,  $|B|\leq |C|$ implies that there is an injection from $B$ to $C$. So define functions $f: A\rightarrow B, f(x)=y$ and $g: B\rightarrow C, g(y)=z$, which $x\in A, y\in B, z\in C$. To see the relation between $A$ and $C$, we define a function $h: A\rightarrow C, h(x)=g(f(x))=z$, and show the function $h$ is injective:
+
+\begin{gather*}
+    h(x)=h(x')\\
+    g(f(x))=g(f(x'))\\
+    g(y)=g(y')\implies y=y' \quad \text{$g$ is injective}\\
+    f(x)=f(x')\implies x=x' \quad \text{$f$ is injective}\\
+    \therefore h(x)=h(x') \implies x=x' \quad \checkmark
+\end{gather*}
+We have shown that the function $h$ is injective, which implies that there is an injection from $A$ to $C$, therefore, by the definition 5.5.1, $|A|\leq |C|$ as there is an injection from $A$ to $C$. \qed 
+
+
+\subsection*{5.6.51}
+
+(A) $f: [0,1]\rightarrow [0,1), f(x)=\frac{1}{2}x$, $\quad g:[0,1)\rightarrow [0,1], g(x)=x,\quad$ both $f$ and $g$ are strictly increasing, so they are both injective. By the theorem,   $|[0,1]|=|[0,1)|$ holds true as there exists a bijection from $|[0,1]|$ to $|[0,1)|$, showing that they have the same cardinality. 
+
+(B)  $f:[0,\infty)\rightarrow(0,\infty), f(x)=\sqrt{x}+1, g:(0,\infty)\rightarrow[0,\infty), g(x)=\sqrt{x},\ldots$ 
+
+(C) We know that $|[0,1]|=|(0,1)|$, so proving $|[0,1]|=|\mathbb{R}|$ is equivalent to proving $|(0,1)|=|\mathbb{R}|$.  We can now construct functions $f:(0,1)\rightarrow \mathbb{R}, f(x)=tan(\pi(x-\frac\pi2))$ and $g:\mathbb{R}\rightarrow (0,1), g(x)=\frac{2}{\pi}\arctan\left(x\right)$. By the theorem, we can conclude that $|[0,1]|=|\mathbb{R}|$.
+
+(D) We know $|(0,1)|=|\mathbb{R}|$, $\mathbb{R}\setminus\mathbb{Z}\subset\mathbb{R}$, and $(0,1)\subset \mathbb{R}\setminus\mathbb{Z}$. Thus $(0,1)\subset\mathbb{R}\setminus\mathbb{Z}\subset\mathbb{R}$,and so $|(0,1)|\leq|\mathbb{R}\setminus\mathbb{Z}|\leq|\mathbb{R}|\implies |(0,1)|=|\mathbb{R}\setminus\mathbb{Z}|=|\mathbb{R}|$ 
+
+\subsection*{5.6.52}
+
+(A) Even though $g$ is not necessarily invertible, as $g$ is injective but not necessarily surjective, but we can still restrict the codomain to $g$'s image so that $g$ becomes surjective within the restricted codomain, that is,  we defined $h$ in 2 parts, $g^{-1}(a)$ if $a\in E$ and $f(a)$ if $a\notin E$.
+
+(B) 
+
+(C) Let $a_1,a_2\in A$,
+
+When $a_1,a_2\in E,$ $h(a_1)=h(a_2)\implies f(a_1)=f(a_2)\implies a_1=a_2$ as $f$ is injective. 
+
+When $a_1,a_2 \notin E$, $$h(a_1)=h(a_2)\implies g^{-1}(a_1)=g^{-1}(a_2)\implies g(g^{-1}(a_1))=g(g^{-1}(a_2))\implies a_1=a_2$$ as $g$ is defined as invertible. 
+
+When $a_1\in E, a_2\notin E$, $$h(a_1)=h(a_2)\implies g^{-1}(a_1)=f(a_2)\implies g(g^{-1}(a_1))=g(f(a_2))\implies a_1=g(f(a_2))$$ $$\implies g(f(a_2))\in E\implies f(a_2)\in K$$ However, $K=B\setminus f(A)\implies f(a_2)\in B\setminus f(A)\implies f(a_2)\notin f(A)\implies a_2\notin A$, contradiction occurs as $a_2$ is supposed to be an element of $A$.
+
+So, based on all the valid possibilities, we can conclude that $h(a_1)=h(a_2)$ always imply $a_1=a_2$.\qed
+
+(D) To prove that $h$ is surjective (onto), we take an arbitrary element $b\in B$ and show that there is a preimage $x\in A$ such that $h(x)=b$. There are two cases to consider:
+
+If $x=g(b)\in E,$ then $$h(x)=g^{-1}(g(b))=b,$$ shown that all elements in $B$ are indeed obtainable from $x$.
+
+if $x=g(b)\notin E,$ then 
+
+
+
+\textbf{gave up nvm}
+
+\end{document}

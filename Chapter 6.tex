@@ -1,0 +1,447 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumerate}
+% Margins
+\usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
+% Colour table cells
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+% Get larger line spacing in table
+\newcommand{\tablespace}{\\[1.25mm]}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\tstrut{\rule{0pt}{2.0ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+\title{Mat102 Chapter 6}
+\author{Joseph Siu}
+\date{\today}
+
+
+
+
+
+\begin{document}
+\maketitle
+
+\section*{6.4 Exercises for Chapter 6}
+
+
+\subsection*{6.4.1}
+
+(A) As 2 divides 58, $2|58$, we can rewrite 58 as $2m,m\in\mathbb{N}$ 
+
+(B) 60 is divisible by 15 as 15 divides 60, $15|60$ 
+
+(C) As 84/7 is an integer, so that $7|87$, 87 is divisible by 7.
+
+(D) If $b|a$, then $a/b$ is an integer
+
+\subsection*{6.4.2}
+
+(A) True, 6 indeed divides 54
+
+(B) false, $3\mid33$ but $33\nmid 3$ 
+
+(C) $-1\mid 1$ means $1=(-1)\times m,m\in\mathbb{Z}$, indeed, when $m=-1$ the equality holds. 
+
+(D) True, as $\nexists x\in\mathbb{Z},2=4x$ 
+
+(E) False, $4\times 2=8$
+
+(F) True, as (D).
+
+\subsection*{6.4.3}
+
+(A) $7^5\mid(3*7*10)^3\cdot (2*7^2)^2$ 
+
+(B) $7^5\nmid 7^2\cdot 17^9$
+
+(C) $7^5\nmid 7^4*11^4*5^7$
+
+(D) $7^5\nmid 3^{15}\cdot 5^4\cdot 7^4$
+
+\subsection*{6.4.4}
+
+(A) $d\mid a\implies a=dx,x\in\mathbb{Z}$
+
+$d\mid b\implies b=dy,y\in\mathbb{Z}$
+
+$a+b=dx+dy=d(x+y), d\mid d(x+y)\implies d\mid(a+b)$ \qed
+
+
+(B) $d\mid(1+2)$ but $d\nmid 1$ and $d\nmid 2$ (d=3)
+
+(C)  $d\mid(1+2)$ but $d\nmid 1$ and $d\nmid 2$ (d=3)
+
+(D) We need to show that when $d$ divides $a+b$, and not both a and b are divisible by d, then $d$ must divides neither of them. There are 2 cases to consider, one is only one of a and b are divisible by d, and the second case is both are not divisible by d. Firstly, $d$ divides only one of a and b, let a be the one, so $(a+b)=dx, a=dy, x,y\in\mathbb{Z}$, rearranging we get $b=dx-dy=d(x-y),$ showing that $b$ is also divisible by d, contradicting the fact that b is not divisible by d. Therefore, only the second case is possible. We have shown that not the first option implies it must be the second option, thus the statement is valid. 
+
+This implies that only the other cases are possible to obtain (and we have shown that it is indeed obtainable from (a))
+
+\subsection*{6.4.5}
+
+let $x,y\in\mathbb{Z}$
+
+(A) $a=dx,b=dy,ab=dx\times dy=d(dxy).\quad\therefore d\mid a\cdot b$ 
+
+(B) $21|3\cdot7$ but a and b separately are smaller than 21.
+
+(C) assume b divides a, $a=dx, a\cdot b=dxb=d(xb),$ showing that $d\mid a\cdot b$  
+
+(D) If $d\cdot d\mid a\cdot a,$ then $a\cdot a=x\cdot d\cdot d,x\in\mathbb{Z}$, as $a=a$. We can rewrite this as $\exists x\in\mathbb{Z}:x=\frac{a}{d}\cdot\frac{a}{d}$. Now we need prove that $\frac{a}{d}$ must also be an integer when $x\in\mathbb{Z}$, in other words, $x\in\mathbb{Z}\implies$  $\frac{a}{d}\in\mathbb{Z}$ (Let $\mathbb{R}$ be the universe of discourse): 
+
+The contrapositive is $\frac{a}{d}\notin\mathbb{Z}\implies x\notin\mathbb{Z},$ considering 2 possible cases for $\frac{a}{b}\notin\mathbb{Z}:\frac{a}{d}\in\mathbb{R\setminus Q}$ or $\frac{a}{d}\in\mathbb{Q\setminus Z}$. Firstly, when $\frac{a}{d}$ is irrational, it is contradicting the definition of rational number as $\frac{a}{d}$ is expressed as a ratio of 2 integers, so this case never exists. Secondly, when $\frac{a}{d}\in\mathbb{Q\setminus Z},$ we can express $a$ and $d$ in terms of multiplication of prime numbers with powers (when $a=0$ obviously the statement holds true, other than 0, based on the fundamental theorem of arithmetic, and the fact that $(x)^0=1$ as $x$ is any prime number, this lemma holds true) $\frac{a}{d}=\frac{e}{f}=\frac{p_1p_2p_3\ldots p_n}{q_1q_2q_3\ldots q_m},n,m\in\mathbb{N}$ which assumed $\frac{e}f$ is in the equivalent class $[\frac{a}d]$ (in chapter 7) and $\frac{e}f$ is in its reduced form, Now, as it is in its reduced form, we know that $\forall i\in\mathbb{N}\cap [1,n], \forall j\in\mathbb{N}\cap [1,m], p_i\neq q_j$, then squaring $\frac{e}f$: $\frac{e}f\cdot\frac{e}f=\frac{p_1p_2p_3\ldots p_n}{q_1q_2q_3\ldots q_m}\cdot\frac{p_1p_2p_3\ldots p_n}{q_1q_2q_3\ldots q_m}=\frac{p_1p_2p_3\ldots p_{2n}}{q_1q_2q_3\ldots q_{2m}}}$ and  $\forall i\in\mathbb{N}\cap [1,2n], \forall j\in\mathbb{N}\cap [1,2m], p_i\neq q_j$ remains true, showing that $x=\frac{a}{d}=\frac{e}{f}\in\mathbb{Q\setminus Z}\iff x\notin\mathbb{Z}$. Therefore, as the contrapositive is true, the statement is also true. \qed 
+
+
+\subsection*{6.4.6}
+
+We can separate the natural set into 5 infinite sequences: \begin{gather*}
+    \{1,6,11,16,\ldots,5m+1\},\\\{2,7,12,17,
+\ldots,5m+2\},\\\{3,8,13,18,\ldots,5m+3\},\\\{4,9,14,19,
+\ldots,5m+4\},\\\{5,10,15,20,\ldots,5m\}, m\in\mathbb{N}\cup\{0\}, 5m\neq 0
+\end{gather*}
+
+Consider the base cases $n=1,2,3,4,5,n\in\mathbb{N}.$
+
+When $n=1,$ $5\mid1^4-1=0$, which holds true. Assume the statement holds true for all $1,6,11,16,\ldots,k$ which $5\mid k-1$. By showing $k+5$ holds true we can conclude all elements in the first sequence hold true:
+
+\begin{align*}
+    5\mid n^4-1&\implies n^4-1=5m,m\in\mathbb{Z}\\
+    (n+5)^4-1&=((n+5)^2-1)((n+5)^2+1)\\
+    &=(n^2+10n+24)(n^2+10n+26)\\
+    &=n^4+(10n^3+10n^3)+(26n^2+100n^2+24n^2)+(260n+240n)+624\\
+    &=(n^4-1)+(20n^3+150n^2+500n+625)\\
+    &=5(m+4n^3+30n^2+100n+125)\\
+    &\because 5\mid5(m+4n^3+30n^2+100n+125)\\
+    &\therefore 5\mid (n+5)^4-1\\
+\end{align*}
+This shows that $k\implies k+5$, shown all elements in the sequence holds true.
+
+When $n=2,$ $5\mid2^4-1=15$, which holds true. Assume the statement holds true for all $2,7,12,17,\ldots,k$ which $5\mid k-2$. By showing $k+5$ holds true we can conclude all elements in the second sequence hold true (which has been shown when $n=1$):
+
+When $n=3,$ $5\mid3^4-1=80$, which holds true. Assume the statement holds true for all $3,8,13,18,\ldots,k$ which $5\mid k-3$. By showing $k+5$ holds true we can conclude all elements in the third sequence hold true (which has been shown when $n=1$):
+
+When $n=4,$ $5\mid4^4-1=255$, which holds true. Assume the statement holds true for all $4,9,14,19,\ldots,k$ which $5\mid k-4$. By showing $k+5$ holds true we can conclude all elements in the fourth sequence hold true (which has been shown when $n=1$):
+
+In the fifth sequence, all elements are divisible by 5 as 5|5m, and all elements in the sequence can be expressed as $5m,m\in\mathbb{N}.$ Therefore, the implication holds true for all elements.
+
+Now we can conclude that the statement is true, by the PMI. \qed
+
+\subsection*{6.4.7}
+
+(A)
+
+\begin{gather*}
+    27=(-3)\times (-8) + 3\\
+    5=0\times (-7)+5\\
+    -15=(-8)\times 2+1\\
+    -4=(-1)\times 9+5\\
+    -36=4\times(-9)+0
+\end{gather*}
+
+(B)
+
+Proof by cases:
+
+\begin{enumerate}
+    \item When $a,b\in\mathbb{N},$ the Division Algorithm has already been proven in Theorem 6.1.2;
+    \item When $a=0,b\in\mathbb{N},$ we can always express a as $a=0\cdot b+0,$ which the Division Algorithm holds true;
+    \item  When $a,b\in\mathbb{Z},a<0,b>0,$  we have proven that $-a=q\cdot b+r$ exists uniquely. So, multiply both sides by $-1,$ since $b$ must remains positive, so we group the negative sign with $q$ and $r$: $a=(-q)\cdot b+(-r)$. Proving the existence and uniqueness. 
+    \item When $a,b\in\mathbb{Z}, b<0, a>0,$ we have proven that $a=q\cdot (-b)+r$ exists, so move the negative sign to $q,$ we get $a=(-q)\cdot b+r,$ which proves the algorithm.
+    \item When $a,b\in\mathbb{Z}, b<0, a=0,$ similar to case 2, we can always write $a$ as $a=0\cdot b+0$.
+    \item When $a,b\in\mathbb{Z},a,b<0,$ we know that $-a=q\cdot (-b)+r$, multiplying both sides by -1, we get $a=q\cdot b+(-r)$. 
+\end{enumerate}
+For all cases the division algorithm holds true. \qed
+
+\subsection*{6.4.8}
+
+Proof by contrapositive:
+
+Proving the statement is equivalent to: If $a$ is odd or $b$ is odd, then $c$ is also odd.
+
+Consider 2 cases:
+\begin{enumerate}
+    \item When only one of $a$ and $b$ is odd: Let $a$ be the odd one ($a$ and $b$ are interchangeable variables), so we can rewrite $a$ and $b$ as $2n+1$ and $2m$ respectively which $n,m\in\mathbb{Z}$. Then, $$a^2+b^2=(2n+1)^2+(2m)^2=4n^2+4n+1+4m^2=2(2n^2+2n+2m^2)+1,$$ showing that $c^2$ is odd. As proven previously, the square of a number is odd if and only if the number is odd (forward direction can be proved using its contrapositive; backward direction is also true). Therefore, $c$ must also be true, proving the contrapositive of the statement, which implies that the statement holds true. 
+    \item When both $a$ and $b$ are odd, then let them be $2n+1$ and $2m+1$ respectively. $$(2n+1)^2+(2m+1)^2=4n^2+4m^2+4n+4m+2=4(n^2+m^2+n+m)+2,$$ assume that $c$ is even, then $c$ can be expressed as $2k,k\in\mathbb{Z},$ and so $c^2=(2k)^2=4k^2,$ implying that $c^2$ must be divisible by 4. However, for this case $ 4\nmid a^2+b^2=4(n^2+m^2+n+m)+2,$ contradiction occurs, so $c$ cannot be even, only $c$ is odd is possible for this case.
+\end{enumerate}
+
+Both cases show that if $a$ is odd or $b$ is odd, then $c$ must be odd too, since the contrapositive is proven, thus the statement holds true for all situations. \qed
+
+\subsection*{6.4.9}
+
+We can see that the 6 digits number is basically $1000a+a=(1000+1)a=1001a$ if $a$ is the 3 digits number. Since $1001=7\cdot11\cdot13$,  so that $x \mid 1001, x\in\{7,11,13\}$, as proven before, if $x\mid 1001,$ then $x\mid 1001a.$ Therefore, at least 3 prime numbers ($7,11,13$) divides the 6 digits number $1001a$, proving the statement. \qed
+
+\subsection*{6.4.10}
+
+$\gcd(0,0)$ is not defined as their is no greatest common divisor between 0 and 0. In other words, any integer ($k$) divides 0: $0=ka,k,a\in\mathbb{Z},$ to let the equality holds, either $k$ or $a$ must be 0; that is, when $a=0,$ any value of $k$ divides 0, there isn't a "largest" divisor as there isn't a "largest" integer. 
+
+But, $\gcd(a,0),a\in\mathbb{Z}\setminus\{0\}$ is valid, as the greatest divisor of a is $|a|$ ($a= k\cdot |a|, k\in\{1,-1$\}), so, the greatest \textit{common} divisor is $|a|.$  
+
+\subsection*{6.4.11}
+
+(A) $\gcd(210,405)=\gcd(210,405-210)=\gcd(210,195)=\gcd(210-195,195)$$=\gcd(15,195)=\gcd(15,195-15\cdot13)=\gcd(15,0)=15$ 
+
+(B) $\gcd(10^6\cdot6^2\cdot5^{11},6\cdot15\cdot3^7)=\gcd(2^6\cdot5^6\cdot2^2\cdot3^2\cdot5^{11},2\cdot3\cdot3\cdot5\cdot3^7)=\gcd(2^8\cdot3^2\cdot5^{17},2\cdot3^9\cdot5)$ 
+$=2\cdot3^2\cdot5$ 
+
+(C) $18^2\cdot21^3=(2\cdot3^2)^2\cdot(3\cdot7)^3=2^2\cdot3^7\cdot7^3$
+
+$6\cdot10^3\cdot5^3=2^4\cdot3\cdot5^6$
+
+$\gcd(2^2\cdot3^7\cdot7^3,2^4\cdot3\cdot5^6)=2^2\cdot3$
+
+(D) $3*2*2*5*5*5*7*7^5=2^2\cdot3\cdot5^3\cdot7^6$
+
+$3^5*11^5*3*2^6=2^6\cdot3^6\cdot11^5$
+
+$\gcd(300\cdot35\cdot7^5,33^5\cdot3\cdot64)=2^2\cdot3$
+
+\subsection*{6.4.12}
+
+$a=dx,b=dy,x,y\in\mathbb{N}.$ $\gcd(\frac{a}d,\frac{b}d)=\gcd(x,y)$
+
+If $\gcd(x,y)\neq1$ then $d\neq\gcd(a,b),$ contradiction. Thus, $\gcd(x,y)=\gcd(\frac{a}d,\frac{b}d)=1$ 
+
+\subsection*{6.4.13}
+
+(A)
+
+$$\gcd(7n+1,8n+1)=\gcd(7n+1,8n+1-7n-1)=$$$$\gcd(7n+1,n)=\gcd(7n+1-7n,n)=\gcd(1,n)=1$$
+
+(B)
+
+$$\gcd(a+b,a+2b)=\gcd(a+b,a+2b-a-b)=\gcd(a+b,b)$$
+
+$$=gcd(a+b-b,b)=gcd(a,b)$$
+
+\subsection*{6.4.14}
+
+$$\gcd(n+1,2-n+n+1)=\gcd(n+1,3))$$ If 3 divides $n+1,$ then GCD is 3, otherwise GCD is 1.
+
+$$\gcd(7^n,7^n+4-7^n)=\gcd(7^n,4)$$
+As $7^n$is always and only a multiple of 7, so it is impossible to be equal to 4, so the GCD is 1. 
+
+\subsection*{6.4.15}
+
+We know that $\gcd(a,10)\leq10,$ and the GCD must be a divisor of 10, so the possible values are $\{1,2,5,10\}.$ Indeed, plugging in all 4 values into $a$, all equalities hold. \qed
+
+\subsection*{6.4.16}
+
+(A)\begin{align*}
+    1872-6\cdot300&=72\\
+    300-4\cdot72&=12\\
+    72-6\cdot12&=0\\
+    300-4\cdot(1872-6\cdot300)&=12\\
+    1872*(-4)+300*(25)&=12
+\end{align*}
+
+skipping the rest.
+
+\subsection*{6.4.17}
+
+(A) 30, 44, 45
+
+(B) $lcm(1,a)=a$ as $a\mid a$ and $1\mid a,$ $lcm(a,a)=a$ as $a\mid a,$ and finally $lcm(a,a+1)=a(a+1)$ as a and a+1 are relative prime.  We can factor the numbers into a multiplication of primes, and multiply them, divide the common primes, to get the lcd. 
+
+(C) 
+
+Apply prime factorization/decomposition of a and b:
+
+($p_j$ are prime factors of a and/or b. That's why zero-powers are allowed here).
+
+Then
+
+$$
+GCD(a,b)=p_1^{\min\{\alpha_1,\beta_1\}}p_2^{\min\{\alpha_2,\beta_2\}}\cdots p_s^{\min\{\alpha_s,\beta_s\}},
+$$
+$$
+LCM(a,b)=p_1^{\max\{\alpha_1,\beta_1\}}p_2^{\max\{\alpha_2,\beta_2\}}\cdots p_s^{\max\{\alpha_s,\beta_s\}},
+$$
+
+hence
+$$
+GCD(a,b)\cdot LCM(a,b)=p_1^{\max\{\alpha_1,\beta_1\}+\min\{\alpha_1,\beta_1\}}p_2^{\max\{\alpha_2,\beta_2\}+\min\{\alpha_2,\beta_2\}}\cdots p_s^{\max\{\alpha_8,\beta_s\}+\min\{\alpha_8,\beta_s\}};
+$$but
+
+$$
+\max\{\alpha,\beta\}+\min\{\alpha,\beta\}=\alpha+\beta.
+$$
+
+So,
+
+$$
+GCD(a,b)\cdot LCM(a,b)=p_1^{\alpha_1+\beta_1}p_2^{\alpha_2+\beta_2}\cdots p_s^{\alpha_s+\beta_s}=\ldots.
+$$
+
+
+
+
+
+(D) when their gcd is 1, as shown in (c). 
+
+\subsection*{6.4.18}
+
+When one of $a$ and $b$ is 0, let a be the one (a and b are interchangeable variables and no matter what b is the conclusion won't change), $\gcd(0,b)=|b|,$ so we can express $|b|$ as $|b|=a\cdot0+b\cdot(-1),b<0$ and $|b|=a\cdot0+b\cdot(1),b\geq0$
+
+When both $a$ and $b$ are negatives, and we know $gcd(a,b)=gcd(-a,-b)$, as $-a$ and $-b$ are positives, therefore $a,b$ are covered by the strong induction as their gcd is equivalent to $-a,-b$ 's and they are covered by the strong induction. 
+
+\subsection*{6.4.19}
+
+We want to show the implication holds for both directions
+
+First, we want to show that $\gcd(a,b)\mid c\implies \exists x\in\mathbb{Z},\exists y\in\mathbb{Z},ax+by=c.$ As $gcd(a,b)\mid c,$ we can express the divisibility as $c=gcd(a,b)\cdot d,d\in\mathbb{Z}.$ and from B´ezout’s identity, we know that $\gcd(a,b)=an+bm,n,m\in\mathbb{Z}$, thus $c=(an+bm)\cdot d=a(dn)+b(dm)=ax+by,x=dn,y=dm.$ \qed 
+
+Second, we show the forward implication $\exists x,y\in\mathbb{Z}, ax+by=c\implies gcd(a,b)\mid c.$ Let d be the GCD of $a$ and $b$, then $ax+by=c \iff (ed)x+(fd)y=c \iff d(ex+fy)=c,$ showing that $d\mid c \iff gcd(a,b)\mid c$. \qed
+
+\subsection*{6.4.20}
+
+Substitute the new pair in to the equation: $a(x_0+k\cdot b)+b(y_0 - k\cdot a)=a(x_0-b\cdot k)+b(y_0 + a\cdot k)=d,$ and we want to show that d=c which $ax+by=c.$ We know that $ax_0+by_0=c\implies \gcd(a,b)=c,$ and $a(x_0-b\cdot k)+b(y_0 + a\cdot k)=ax_0+by_0+abk-abk=ax_0+by_0=d \implies \gcd(a,b)=d,$ as the GCD of 2 number exists and is unique, we thus conclude that $c=d.$  
+
+\subsection*{6.4.21}
+
+$\gcd(a,b)=ax+by,$ we know that $d\mid a$ and $d\mid b,$ thus $d\mid ax+by\iff d\mid gcd(a,b).$ \qed
+
+\subsection*{6.4.22}
+
+We prove by induction on the product of all integers (positive) first,
+
+When the product is 2, the only possible combination of integers is $2\iff 2\cdot 1$, which obviously is divisible by 2.
+
+Now assume that the induction hypothesis holds true for all $1,2,\ldots,k,k\in\mathbb{N},$ consider the case $k+1.$ If $k+1$ is prime, then it can and only can divisible by itself, which is a prime, holding the hypothesis. If $k+1$ is not a prime, then it can be expressed, at least, in terms of 2 numbers $k+1=ab, 1<a\leq b<k+1,$ thus $p\mid k+1 \iff p\mid ab \implies p\mid a $ or $p\mid b.$  Both cases are covered by the induction hypothesis, thus the product of all integers (positive) is proven. For the cases -1,1, they are not divisible by any prime; similar to 0, it has infinite factors thus it is divisible by any prime. For all negative cases, we can still express it in terms of the product of 3 integers $abc$ which $a=-1,$ and as both $b$ and $c$ are positive integers covered by the induction hypothesis (if p divides -(k+1), $k>0$, then p divides either -1 or k+1 ($-(k+1)=-1\cdot (k+1)$), which divides -1 is not possible, thus p divides (k+1), and we know that k+1 holds true for all positive cases, thus it also holds for all negative cases, our proof is complete. \qed
+
+\subsection*{6.4.23}
+
+$1\cdot3\cdot11=33,33\mid33$. Not contradicting Euclid's Lemma as 33 is not a prime number (factorable). 
+
+\subsection*{6.4.24}
+
+If $a$ and $c$ are relative prime, then $$ax+cy=1,$$ multiply both sides by b, $$abx+cby=b,$$ $c\mid ab \implies c\mid abx,$ and obviously $c\mid cby,$ therefore, $c\mid b,$ as required. \qed
+
+\subsection*{6.4.25}
+
+\begin{proof}
+    
+$37j=12k \implies 37\mid 12k,$ this shows that 37 either divides 12 or k, which only $37\mid k$ is possible.
+
+$37j=12k\implies 12\mid 37j,$ which only $12\mid j$ is possible.
+
+We can express k and j as $37x,12y,$ respectively. Substitute them back into the equation: $37(12y)=12(37x)\implies x=y.$ Showing that x is equal to y, denote x and y as z which $x=y=z.$ 
+
+$j+k=12y+37x=12z+37z=49z=7(7z),$ showing the sum of j and k is indeed divisible by 7 for all cases. 
+\end{proof}
+
+\subsection*{6.4.26}
+
+\begin{proof}
+    Assume, for the sake of contradiction, that $\sqrt[3]{20}$ is a rational number, then it can be expressed as a ratio of 2 integers: $\sqrt[3]{20}=\frac{p}q,p\in\mathbb{Z},q\in\mathbb{N}.$ And p and q are relative prime (gcd(p,q)=1).
+
+    \begin{align*}
+        \sqrt[3]{20}&=\frac{p}q\\
+        20&=\frac{p^3}q^3\\
+        20q^3&=p^3\\
+    \end{align*}
+    Left side is always even, showing $p^3$ is also even, which implies p is also even, denote as 2a,
+    \begin{align*}
+        20q^3&=(2a)^3\\
+        20q^3&=8a^3\\
+        5q^3&=2a^3
+    \end{align*}
+    $2\mid 5q^3\implies 2\mid q^3,$ implies that $q$ is also even, contradicting the assumption of the fraction $\frac{p}q$ is in its reduced form. Therefore, $\sqrt[3]{20}$ must be irrational, as required.
+\end{proof}
+
+\subsection*{6.4.27}
+
+
+\begin{proof}
+    Proving by contrapositive: Showing that if $\sqrt{2k}$ is rational, then $k$ must be even. is enough to prove the original statement.
+
+    \begin{gather*}
+        \sqrt{2k}=\frac{p}q\\
+        q^2(2k)=p^2\\
+    \end{gather*}
+\begin{enumerate}
+    \item When p is even, q must be odd, otherwise contradicting the fact that the fraction $\frac{p}q$ is in its reduced form. $$(2m+1)^2(2k)=(2n)^2$$ $$2(4m^2+4m+1)k=2(2n^2)$$ $$(4m^2+4m+1)k=2n^2$$ We know that 2 either divides $4m^2+4m+1$ or $k$, which only $2\mid k$ is possible, showing that k must be even.
+    \item When p is odd. $$q^2(2k)=(2n+1)^2=4n^2+4n+1,$$ which is impossible as the right side is always odd and the left side is always even. 
+\end{enumerate}
+\end{proof}
+
+\subsection*{6.4.28}
+
+
+\begin{proof}
+    (A)  \begin{align*}
+        \sqrt{11}&=\frac{p}q\\
+        q^211&=p^2
+    \end{align*}
+   11 is a prime number, and it divides $p^2,$ implying that $11\mid p \iff p=11a,$ 
+   \begin{align*}
+       q^211&=(11a)^2\\
+       q^2&=11a^2\\
+   \end{align*}
+   Repeat the same steps, we see that $q=11b.$ Which contradicts the fact that the fraction is in its reduced form. 
+
+   (B) For injection we want to show that $f(a,b)=f(x,y)\implies a=x, b=y.$ $$a+b\sqrt{11}=x+y\sqrt{11},$$ move all $\sqrt{11}$ to the same side, $$a-x=(y-b)\sqrt{11},$$ left side is always an integer, but right side is an integer times a rational number (proven in (A)), the only case they are equal is when $(y-b)=0$ and $(a-x)=0$ otherwise the right side will never be an integer. Thus, these show that $y=b$ and $a=x$, it is indeed injective.
+
+   And $f$ is not surjective as $\pi,$ which is one of the element of $f's$ codomain, is not possible to be expressed in terms of a combination of an integer and an integer multiple of $\sqrt{11}.$ 
+\end{proof}
+
+\subsection*{6.4.29}
+
+
+\begin{proof}
+    $$2^{2m+2}\cdot3^{2m+2+n}=2^{2n}\cdot3^{2m+6}$$ showing that \begin{gather*}
+        2m+2=2n\\
+        2m+2+n=2m+6\\
+        n=4\\
+        m=3
+    \end{gather*}
+    We have proven that fundamental theorem of Arithmetic's uniqueness and existence, thus, when $2^p\cdot3^q=2^x\cdot3^y,$ this implies that $p=x$ and $q=y,$ otherwise contradicting the fact of the uniqueness of the prime factors. 
+\end{proof}
+
+\subsection*{6.4.30}
+
+
+\begin{proof}
+    $$2^{a+2b}=2^{c+2d}$$ This only implies that $a+2b=c+2d.$ A counterexample would be $(4)+2(2)=(2)+2(3).$ Contradicting the implication, thus false statement. 
+\end{proof}
+
+\subsection*{6.4.31}
+
+
+\begin{proof}
+    $f$ is injective but not surjective. Injective because numbers all have unique factorization of primes, for example, if two numbers have the same value, then they must have the same prime factors. Not surjective becasue It does not cover naturals that have factors other than 5 and 7. 
+\end{proof}
+
+\subsection*{6.4.32}
+
+
+\begin{proof}
+    Same as (31) but we can factor 12 and 18 into primes: $f(a,b)=3^{1a+2b}\cdot2^{2a+1b}$. Firstly this is noe surjective, same reason as the previous question. Secondly we check if $f$ is injective or not \begin{gather*}
+        2^{2a+b}\cdot3^{a+2b}=2^{2x+y}\cdot3^{x+2y}\\
+        2a+b=2x+y\\
+        a+2b=x+2y\\
+        4a+2b=4x+2y\\
+        3a=3x\\
+        a=x\\
+        b=y\\
+    \end{gather*} 
+    Showing the injectivity. 
+\end{proof}
+
+\subsection*{6.4.33}
+
+
+\begin{proof}
+   Assume, for the sake of contradiction,  $log_p(q)=\frac{m}n$, we can rewrite it as $p^{\frac{m}n}=q.$ Square both sides by $n,$ we get $p^m=q^n.$  But we also notice that a number has its unique prime factorization, which means it can be and only be divisible by these primes, if $p$ and $q$ are distinct primes, then this implies the left hand side is only divisible by prime $p$ and the right hand side is only disivible by prime $q$, contradicting the fact that both sides have the same number. Therefore, it must be irrational. In other words, left side implies the number is divisible by p and not q, however the right side implies the number is indeed divisible by q, therefore contradiction occurs. 
+\end{proof}
+
+\subsection*{6.4.34}
+(A) Similar steps. $log_{216}(36)=\frac{m}n \iff 216^{\frac{m}n}=36 \iff 216^m=36^n.$ Expanding 2 numbers to their factorization of primes: $3^{3m}\cdot2^{3m}=2^{2n}\cdot3^{2n}.$ If the right hand side is equal to the left hand side, then their prime factorization must be the same. In other words, both sides need to have the same number of factors 3 and 2. Therefore, $3m=2n$ and $3m=2n$, Which is equivalent to $\frac{m}n=\frac23.$ Showing it is indeed rational. \qed
+
+(B) At the very last step, the exponents do match, they aren't contradicting the fact that n is not a natural. 
+ \end{document}
